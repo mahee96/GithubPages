@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://www.freecodecamp.org/news/async-await-javascript-tutorial/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism.min.css">
+    <link rel="stylesheet" type="text/css" href="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-unescaped-markup.css">
+
+    <link href="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/screen.css">
+    <link rel="stylesheet" type="text/css" href="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/algolia-search.css">
+
+    <script type="text/javascript" async="" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/analytics.js.download"></script><script async="" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/gtm.js.download"></script><script src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/algoliasearch.min.js.download"></script>
+    <script src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/autocomplete.min.js.download"></script>
+
+
+    <script src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/dayjs.min.js.download"></script>
+    <script src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/localizedFormat.min.js.download"></script>
+    <script src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/relativeTime.min.js.download"></script>
+
+    <script src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/zh-cn.min.js.download"></script>
+
+
+    <link rel="icon" href="https://www.freecodecamp.org/news/favicon.png" type="image/png">
+    <link rel="canonical" href="https://www.freecodecamp.org/news/async-await-javascript-tutorial/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://www.freecodecamp.org/news/async-await-javascript-tutorial/amp/">
+    
+    <meta property="og:site_name" content="freeCodeCamp.org">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS">
+    <meta property="og:description" content="When does an asynchronous function finish? And why is this such a hard question to answer?  Well it turns out that understanding asynchronous functions requires a great deal of knowledge about how JavaScript works fundamentally. Let&#39;s go explore this concept, and learn a lot about JavaScript in the process. Are">
+    <meta property="og:url" content="https://www.freecodecamp.org/news/async-await-javascript-tutorial/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1506704810770-7e9bbab1094b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ">
+    <meta property="article:published_time" content="2020-09-28T22:02:46.000Z">
+    <meta property="article:modified_time" content="2020-09-28T22:34:03.000Z">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="Asynchronous">
+    <meta property="article:tag" content="Asyncawait">
+    <meta property="article:tag" content="Web Development">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/freecodecamp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS">
+    <meta name="twitter:description" content="When does an asynchronous function finish? And why is this such a hard question to answer?  Well it turns out that understanding asynchronous functions requires a great deal of knowledge about how JavaScript works fundamentally. Let&#39;s go explore this concept, and learn a lot about JavaScript in the process. Are">
+    <meta name="twitter:url" content="https://www.freecodecamp.org/news/async-await-javascript-tutorial/">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1506704810770-7e9bbab1094b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Fredrik Strand Oseberg">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="JavaScript, Asynchronous, Asyncawait, Web Development">
+    <meta name="twitter:site" content="@freecodecamp">
+    <meta name="twitter:creator" content="@foseberg">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="1333">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "freeCodeCamp.org",
+        "url": "https://www.freecodecamp.org/news/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.freecodecamp.org/news/content/images/2019/11/fcc_primary_large_24X210.svg",
+            "width": 210,
+            "height": 24
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Fredrik Strand Oseberg",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://www.freecodecamp.org/news/content/images/2019/06/Fredrik-Oseberg.png",
+            "width": 600,
+            "height": 655
+        },
+        "url": "https://www.freecodecamp.org/news/author/fredrik/",
+        "sameAs": [
+            "https://twitter.com/foseberg"
+        ]
+    },
+    "headline": "Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS",
+    "url": "https://www.freecodecamp.org/news/async-await-javascript-tutorial/",
+    "datePublished": "2020-09-28T22:02:46.000Z",
+    "dateModified": "2020-09-28T22:34:03.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://images.unsplash.com/photo-1506704810770-7e9bbab1094b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ",
+        "width": 2000,
+        "height": 1333
+    },
+    "keywords": "JavaScript, Asynchronous, Asyncawait, Web Development",
+    "description": "When does an asynchronous function finish? And why is this such a hard question\nto answer? \n\nWell it turns out that understanding asynchronous functions requires a great\ndeal of knowledge about how JavaScript works fundamentally.\n\nLet&#x27;s go explore this concept, and learn a lot about JavaScript in the process.\n\nAre you ready? Let&#x27;s go.\n\nWhat is asynchronous code?\nBy design, JavaScript is a synchronous programming language. This means that\nwhen code is executed, JavaScript starts at the top of the",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.freecodecamp.org/news/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.39">
+    <link rel="alternate" type="application/rss+xml" title="freeCodeCamp.org" href="https://www.freecodecamp.org/news/rss/">
+    <!-- This is related to https://webmonetization.org/ -->
+<meta name="monetization" content="$ilp.uphold.com/LJmbPn7WD4JB">
+<!-- GAP -->
+
+
+<!-- Google Tag Manager -->
+<script>
+  // Set up dataLayer with data if provided
+  window.dataLayer = window.dataLayer || [{ gaPropertyId: 'UA-55446531-20' }];
+
+  // Initialized GTM via gtag
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-55446531-20');
+
+  // Configure and initialize GTM
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl+'&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer', 'GTM-5D6RKKP');
+</script>
+<!-- End Google Tag Manager -->
+
+
+<meta name="google-site-verification" content="b4tITLzEeeZGEpvD4mGNf3khKM4fvqejQaz9SYBQP8E">
+
+<style id="fit-vids-style">.fluid-width-video-container{flex-grow: 1;width:100%;}.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+<body class="post-template tag-javascript tag-asynchronous tag-asyncawait tag-web-development">
+
+    <div class="site-wrapper">
+        <nav class="site-nav nav-padding">
+    <div class="site-nav-left">
+        <form id="search-form" onsubmit="submitSearch()">
+  <div role="search" class="searchbox__wrapper">
+    <input type="search" placeholder="Search 6,000+ tutorials" id="search-input" class="aa-input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style=""><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Lato, sans-serif; font-size: 18px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+    <button type="submit" title="Submit your search query." class="ais-SearchBox-submit">
+      <svg class="ais-SearchBox-submitIcon" xmlns="https://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 40 40">
+        <path d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"></path>
+      </svg>
+    </button>
+    <div id="dropdown-container"><span class="algolia-autocomplete" style="position: absolute; z-index: 100; display: none; direction: ltr;"><span class="aa-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="display: block; left: 0px; right: auto;"><div class="aa-dataset-1"></div></span></span></div>
+  </div>
+</form>
+
+<script>
+  const client = algoliasearch('QMJYL5WYTI', '4318af87aa3ce128708f1153556c6108');
+  const index = client.initIndex("news");
+  const screenWidth = window.screen.width;
+  const screenHeight = window.screen.height;
+  const hitsToRender = (screenWidth >= 767 && screenHeight >= 768) ? 8 : 5;
+  const searchForm = document.getElementById('search-form');
+  const input = document.getElementById('search-input');
+  const dropdownContainer = document.getElementById('dropdown-container');
+  let searchQuery, hitSelected, hits;
+
+  input.addEventListener('input', e => {
+    searchQuery = e.target.value;
+  });
+
+  // Prevent form from being submitted with magnifying
+  // glass or enter when there is no query or hits
+  searchForm.addEventListener('submit', e => {
+    e.preventDefault();
+  });
+
+  const search = autocomplete('#search-input', { 
+      hint: false,
+      keyboardShortcuts: ['s', 191],
+      openOnFocus: true,
+      appendTo: dropdownContainer,
+      debug: true // allow tabbing through results
+    }, [
+    {
+      source: autocomplete.sources.hits(index, { hitsPerPage: hitsToRender }),
+      debounce: 250,
+      templates: {
+        suggestion: (suggestion, result) => {
+          hits = true;
+          return `
+            <a href="${suggestion.url}">
+              <div class="algolia-result">
+                <span>${suggestion._highlightResult.title.value}</span>
+              </div>
+            </a>
+          `;
+        },
+        empty: (options) => {
+          hits = false;
+          return `
+            <div class="aa-suggestion footer-suggestion no-hits-footer">
+              <div class="algolia-result">
+                <span>
+                  No tutorials found
+                </span>
+              </div>
+            </div>
+          `;
+        },
+        footer: (query, result) => {
+          if (!query.isEmpty) {
+            return `
+              <div class="aa-suggestion footer-suggestion">
+                <a id="algolia-footer-selector" href="https://www.freecodecamp.org/news/search?query=${searchQuery}">
+                  <div class="algolia-result algolia-footer">
+                    <span>See all results for ${searchQuery}</span>
+                  </div>
+                </a>
+              </div>
+            `;
+          }
+        }
+      }
+    }
+  ]).on('autocomplete:selected', (event, suggestion, dataset, context) => {
+    // If article is selected, set to URL of the article. 
+    // If footer is selected, set to search results path
+    hitSelected = suggestion ? suggestion.url : `https://www.freecodecamp.org/news/search?query=${searchQuery}`;
+
+    // Let browser handle click, and do not go to selection on tab key press
+    if (context.selectionMethod === 'click' || context.selectionMethod === 'tabKey') {
+      return;
+    }
+
+    // Go to selected article or footer path
+    if (hits) {
+      window.location.assign(hitSelected);
+    }
+  });
+
+  // Go to highlighted hit or search for current query
+  // when magnifying glass or enter is pressed
+  function submitSearch() {
+    hitSelected = document.getElementsByClassName('aa-cursor')[0];
+
+    if (hitSelected && searchQuery) {
+      const articleUrl = hitSelected.querySelector('a').href;
+      window.location.assign(articleUrl);
+    } else if (!hitSelected && searchQuery && hits) {
+      window.location.assign(`https://www.freecodecamp.org/news/search?query=${searchQuery}`);
+    }
+  }
+
+  // close dropbar when clicking off 
+  document.addEventListener('click', e => {
+    if (e.target !== input) {
+      search.autocomplete.close();
+    }
+  });
+</script>
+    </div>
+    <div class="site-nav-middle">
+        <a class="site-nav-logo" href="https://www.freecodecamp.org/news"><img src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/fcc_primary_large_24X210.svg" alt="freeCodeCamp.org"></a>
+    </div>
+    <div class="site-nav-right">
+        <div class="nav-group">
+            <a class="nav-forum" href="https://forum.freecodecamp.org/">Forum</a>
+
+            <a class="toggle-button-nav" href="https://www.freecodecamp.org/donate/">
+                Donate
+            </a>
+        </div>
+
+    </div>
+</nav>
+        <a class="donation-banner" id="donation-banner-link" href="https://www.freecodecamp.org/">
+    <p>
+        Learn to code — <span>free 3,000-hour curriculum</span>
+    </p>
+</a>
+
+        <div id="error-message"></div>
+
+        
+
+
+
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <article class="post-full post tag-javascript tag-asynchronous tag-asyncawait tag-web-development ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="September 28, 2020">September 28, 2020</time>
+                    <span class="date-divider">/</span>
+                    <a href="https://www.freecodecamp.org/news/tag/javascript/">
+                        #JavaScript
+                    </a>
+                </section>
+                <h1 class="post-full-title">Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS</h1>
+            </header>
+
+            <div class="post-full-author-header">
+
+
+                
+<section class="author-card">
+    <img class="author-profile-image" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/Fredrik-Oseberg.png" alt="Fredrik Strand Oseberg">
+    <section class="author-card-content author-card-content-no-bio">
+        <h4 class="author-card-name"><a href="https://www.freecodecamp.org/news/author/fredrik/">Fredrik Strand Oseberg</a></h4>
+    </section>
+</section>
+
+
+            </div>
+
+            <figure class="post-full-image">
+                <img srcset="https://images.unsplash.com/photo-1506704810770-7e9bbab1094b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ 300w,
+                            https://images.unsplash.com/photo-1506704810770-7e9bbab1094b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ 600w,
+                            https://images.unsplash.com/photo-1506704810770-7e9bbab1094b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ 1000w,
+                            https://images.unsplash.com/photo-1506704810770-7e9bbab1094b?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2000&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjExNzczfQ 2000w" sizes="(max-width: 800px) 400px,
+                            (max-width: 1170px) 700px,
+                            1400px" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/photo-1506704810770-7e9bbab1094b" alt="Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS" onerror="this.style.display=&#39;none&#39;">
+            </figure>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    <p>When does an asynchronous function finish? And why is this such a hard question to answer? </p><p>Well it turns out that understanding asynchronous functions requires a great deal of knowledge about how JavaScript works fundamentally.</p><p>Let's go explore this concept, and learn a lot about JavaScript in the process.</p><p>Are you ready? Let's go.</p><h2 id="what-is-asynchronous-code">What is asynchronous code?</h2><p>By design, JavaScript is a synchronous programming language. This means that when code is executed, JavaScript starts at the top of the file and runs through code line by line, until it is done. </p><p>The result of this design decision is that only one thing can happen at any one time. </p><p>You can think of this as if you were juggling six small balls. While you are juggling, your hands are occupied and can't handle anything else. </p><p>It's the same with JavaScript: once the code is running, it has its hands full with that code. We call this this kind of synchronous code <em>blocking</em>. Because it's effectively blocking other code from running.</p><p>Let's circle back to the juggling example. What would happen if you wanted to add another ball? Instead of six balls, you wanted to juggle seven balls. That's might be a problem.</p><p>You don't want to stop juggling, because it's just so much fun. But you can't go and get another ball either, because that would mean you'd have to stop. </p><p>The solution? Delegate the work to a friend or family member. They aren't juggling, so they can go and get the ball for you, then toss it into your juggling at a time when your hand is free and you are ready to add another ball mid-juggle. </p><p>This is what asynchronous code is. JavaScript is delegating the work to something else, then going about it's own business. Then when it's ready, it will receive the results back from the work. </p><h2 id="who-is-doing-the-other-work">Who is doing the other work?</h2><p>Alright, so we know that JavaScript is synchronous and lazy. It doesn't want to do all of the work itself, so it farms it out to something else. </p><p>But who is this mysterious entity that works for JavaScript? And how does it get hired to work for JavaScript?</p><p>Well, let's take a look at an example of asynchronous code.</p><pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">logName</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Han"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">setTimeout</span><span class="token punctuation">(</span>logName<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Hi there"</span><span class="token punctuation">)</span></code></pre><p>Running this code results in the following output in the console:</p><pre class=" language-javascript"><code class=" language-javascript"><span class="token comment">// in console</span>
+Hi there
+Han</code></pre><p>Alright. What is going on?</p><p>It turns out that the way we farm out work in JavaScript is to use environment-specific functions and APIs. And this is a source of great confusion in JavaScript. </p><p><strong>JavaScript always runs in an environment. </strong></p><p>Often, that environment is the browser. But it can also be on the server with NodeJS. But what on earth is the difference?</p><p>The difference – and this is important – is that the browser and the server (NodeJS), functionality-wise, are not equivalent. They are often similar, but they are not the same. </p><p>Let's illustrate this with an example. Let's say JavaScript is the protagonist of an epic fantasy book. Just an ordinary farm kid.</p><p>Now let's say that this farm kid found two suits of special armor that gave them powers beyond their own. </p><p>When they used the browser suit of armor, they gained access to a certain set of capabilities. </p><p>When they used the server suit of armor they gained access to another set of capabilities. </p><p>These suits have some overlap, because the creators of these suits had the same needs in certain places, but not in others.</p><p>This is what an environment is. A place where code is run, where there exist tools that are built on top of the existing JavaScript language. They are not a part of the language, but the line is often blurred because we use these tools every day when we write code.</p><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope">setTimeout</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">fetch</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM</a> are all examples of Web APIs. (You can <a href="https://developer.mozilla.org/en-US/docs/Web/API">see the full list of Web APIs here.</a>) They are tools that are built into the browser, and that are made available to us when our code is run. </p><p>And because we always run JavaScript in an environment, it seems like these are part of the language. But they are not.</p><p>So if you've ever wondered why you can use fetch in JavaScript when you run it in the browser (but need to install a package when you run it in NodeJS), this is why. Someone thought fetch was a good idea, and built it as a tool for the NodeJS environment. </p><p>Confusing? Yes!</p><p>But now we can finally understand what takes on the work from JavaScript, and how it gets hired.</p><p>It turns out that it is the environment that takes on the work, and the way to get the environment to do that work, is to use functionality that belongs to the environment. For example <em>fetch</em> or <em>setTimeout</em> in the browser environment.</p><h2 id="what-happens-to-the-work">What happens to the work?</h2><p>Great. So the environment takes on the work. Then what?</p><p>At some point you need to get the results back. But let's think about how this would work. </p><p>Let's go back to the juggling example from the beginning. Imagine you asked for a new ball, and a friend just started throwing the ball at you when you weren't ready. </p><p>That would be a disaster. Maybe you could get lucky and catch it and get it into your routine effectively. But theres a large chance that it may cause you to drop all of your balls and crash your routine. Wouldn't it be better if you gave strict instructions on when to receive the ball?</p><p>As it turns out, there are strict rules surrounding when JavaScript can receive delegated work. </p><p>Those rules are governed by the event loop and involve the microtask and macrotask queue. Yes, I know. It's a lot. But bear with me.</p><figure class="kg-card kg-image-card kg-width-wide"><img src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/autodraw-31_08_2020.png" class="kg-image" alt=""></figure><p>Alright. So when we delegate asynchronous code to the browser, the browser takes and runs the code and takes on that workload. But there may be multiple tasks that are given to the browser, so we need to make sure that we can prioritise these tasks.</p><p>This is where the microtask queue and the macrotask queue come in play. The browser will take the work, do it, then place the result in one of the two queues based on the type of work it receives.</p><p>Promises, for example, are placed in the microtask queue and have a higher priority. </p><p>Events and setTimeout are examples of work that is put in the macrotask queue, and have a lower priority.</p><p>Now once the work is done, and is placed in one of the two queues, the event loop will run back and forth and check whether or not JavaScript is ready to receive the results. </p><p>Only when JavaScript is done running all its synchronous code, and is good and ready, will the event loop start picking from the queues and handing the functions back to JavaScript to run. </p><p>So let's take a look at an example:</p><pre><code>setTimeout(() =&gt; console.log("hello"), 0) 
+
+fetch("https://someapi/data").then(response =&gt; response.json())
+                             .then(data =&gt; console.log(data))
+
+console.log("What soup?")</code></pre><p>What will the order be here?</p><ol><li>Firstly, setTimeout is delegated to the browser, which does the work and puts the resulting function in the macrotask queue.</li><li>Secondly fetch is delegated to the browser, which takes the work. It retrieves the data from the endpoint and puts the resulting functions in the microtask queue.</li><li>Javascript logs out "What soup"?</li><li>The event loop checks whether or not JavaScript is ready to receive the results from the queued work.</li><li>When the console.log is done, JavaScript is ready. The event loop picks queued functions from the microtask queue, which has a higher priority, and gives them back to JavaScript to execute.</li><li>After the microtask queue is empty, the setTimeout callback is taken out of the macrotask queue and given back to JavaScript to execute.</li></ol><pre><code>In console:
+// What soup?
+// the data from the api
+// hello</code></pre><h2 id="promises">Promises</h2><p>Now you should have a good deal of knowledge about how asynchronous code is handled by JavaScript and the browser environment. So let's talk about promises.</p><p>A promise is a JavaScript construct that represents a future unknown value. Conceptually, a promise is just JavaScript promising to return <em>a value</em>. It could be the result from an API call, or it could be an error object from a failed network request. You're guaranteed to get something. </p><pre><code>const promise = new Promise((resolve, reject) =&gt; {
+	// Make a network request
+   if (response.status === 200) {
+      resolve(response.body)
+   } else {
+      const error = { ... }
+      reject(error)
+   }
+})
+
+promise.then(res =&gt; {
+	console.log(res)
+}).catch(err =&gt; {
+	console.log(err)
+})</code></pre><p>A promise can have the following states: </p><ul><li>fulfilled - action successfully completed</li><li>rejected - action failed</li><li>pending - neither action has been completed </li><li>settled - has been fulfilled or rejected</li></ul><p>A promise receives a resolve and a reject function that can be called to trigger one of these states.</p><p>One of the big selling points of promises is that we can chain functions that we want to happen on success (resolve) or failure (reject): </p><ul><li>To register a function to run on success we use .then</li><li>To register a function to run on failure we use .catch</li></ul><pre class=" language-javascript"><code class=" language-javascript"><span class="token comment">// Fetch returns a promise</span>
+<span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://swapi.dev/api/people/1"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"This function is run when the request succeeds"</span><span class="token punctuation">,</span> res<span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"This function is run when the request fails"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+           
+<span class="token comment">// Chaining multiple functions</span>
+ <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://swapi.dev/api/people/1"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">doSomethingWithResult</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">finalResult</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>finalResult<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token function">doSomethingWithErr</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre><p>Perfect. Now let's take a closer look at what this looks like under the hood, using fetch as an example:</p><pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">fetch</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// simplified</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
+  <span class="token keyword">const</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">// ... make request</span>
+  xhr<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span>
+        status<span class="token punctuation">:</span> xhr<span class="token punctuation">.</span>status<span class="token punctuation">,</span>
+        statusText<span class="token punctuation">:</span> xhr<span class="token punctuation">.</span>statusText
+        <span class="token operator">...</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>response<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  
+  xhr<span class="token punctuation">.</span><span class="token function-variable function">onerror</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">"Request failed"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ 
+ <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://swapi.dev/api/people/1"</span><span class="token punctuation">)</span>
+   <span class="token comment">// Register handleResponse to run when promise resolves</span>
+	<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>handleResponse<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>handleError<span class="token punctuation">)</span>
+  
+ <span class="token comment">// conceptually, the promise looks like this now:</span>
+ <span class="token comment">// { status: "pending", onsuccess: [handleResponse], onfailure: [handleError] }</span>
+  
+ <span class="token keyword">const</span> <span class="token function-variable function">handleResponse</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// handleResponse will automatically receive the response, ¨</span>
+  <span class="token comment">// because the promise resolves with a value and automatically injects into the function</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+ <span class="token punctuation">}</span>
+ 
+  <span class="token keyword">const</span> <span class="token function-variable function">handleError</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// handleError will automatically receive the error, ¨</span>
+  <span class="token comment">// because the promise resolves with a value and automatically injects into the function</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+ <span class="token punctuation">}</span>
+  
+<span class="token comment">// the promise will either resolve or reject causing it to run all of the registered functions in the respective arrays</span>
+<span class="token comment">// injecting the value. Let's inspect the happy path:</span>
+  
+<span class="token comment">// 1. XHR event listener fires</span>
+<span class="token comment">// 2. If the request was successfull, the onload event listener triggers</span>
+<span class="token comment">// 3. The onload fires the resolve(VALUE) function with given value</span>
+<span class="token comment">// 4. Resolve triggers and schedules the functions registered with .then</span>
+  
+  </code></pre><p>So we can use promises to do asynchronous work, and to be sure that we can handle any result from those promises. That is the value proposition. If you want to know more about promises you can read more about them <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">here</a> and <a href="https://web.dev/promises/">here</a>.</p><p>When we use promises, we chain our functions onto the promise to handle the different scenarios.</p><p>This works, but we still need to handle our logic inside callbacks (nested functions) once we get our results back. What if we could use promises but write synchronous looking code? It turns out we can.</p><h2 id="async-await">Async/Await</h2><p>Async/Await is a way of writing promises that allows us to write <em>asynchronous code in a synchronous way. </em>Let's have a look.</p><pre><code>const getData = async () =&gt; {
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos/1")
+    const data = await response.json()
+    
+    console.log(data)
+}
+
+getData()</code></pre><p>Nothing has changed under the hood here. We are still using promises to fetch data, but now it looks synchronous, and we no longer have .then and .catch blocks. </p><p>Async / Await is actually just syntactic sugar providing a way to create code that is easier to reason about, without changing the underlying dynamic. </p><p>Let's take a look at how it works.</p><p>Async/Await lets us use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator">generators</a> to <em>pause</em> the execution of a function. When we are using async / await we are not blocking because the function is yielding the control back over to the main program. </p><p>Then when the promise resolves we are using the generator to yield control back to the asynchronous function with the value from the resolved promise.<a href="https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch4.md"> </a></p><p><a href="https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch4.md">You can read more here for a great overview</a> of generators and asynchronous code.</p><p>In effect, we can now write asynchronous code that looks like synchronous code. Which means that it is easier to reason about, and we can use synchronous tools for error handling such as try / catch:</p><pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">getData</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    	<span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://jsonplaceholder.typicode.com/todos/1"</span><span class="token punctuation">)</span>
+    	<span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">await</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+<span class="token punctuation">}</span>
+
+<span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre><p>Alright. So how do we use it? In order to use async / await we need to prepend the function with async. This does not make it an asynchronous function, it merely allows us to use await inside of it. </p><p>Failing to provide the async keyword will result in a syntax error when trying to use await inside a regular function.</p><pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">getData</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"We can use await in this function"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre><p>Because of this, we can not use async / await on top level code. But async and await are still just syntactic sugar over promises. So we can handle top level cases with promise chaining: </p><pre><code>async function getData() {
+  let response = await fetch('http://apiurl.com');
+}
+
+// getData is a promise
+getData().then(res =&gt; console.log(res)).catch(err =&gt; console.log(err); </code></pre><p>This exposes another interesting fact about async / await. When defining a function as async, <em>it will always return a promise.</em></p><p>Using async / await can seem like magic at first. But like any magic, it's just sufficiently advanced technology that has evolved over the years. Hopefully now you have a solid grasp of the fundamentals, and can use async / await with confidence.</p><h1 id="conclusion">Conclusion</h1><p>If you made it here, congrats. You just added a key piece of knowledge about JavaScript and how it works with its environments to your toolbox. </p><p>This is definitely a confusing subject, and the lines are not always clear. But now you hopefully have a grasp on how JavaScript works with asynchronous code in the browser, and a stronger grasp over both promises and async / await. </p><p>If you enjoyed this article, you might also enjoy my <a href="https://www.youtube.com/channel/UCZTeUahnA2GMoo_YpTBFo9A?view_as=subscriber">youtube channel</a>. I currently have a <a href="https://www.youtube.com/watch?v=kmvg9C8hVa0&amp;list=PL_kr51suci7XVVw4SJLZ0QQBAsL2K8Opy">web fundamentals series </a>going where I go through <a href="https://www.youtube.com/watch?v=0ykAOzJb-U8&amp;t=19s">HTTP</a>, <a href="https://www.youtube.com/watch?v=R5uwuG1wPR8">building web servers from scratch</a> and more. </p><p>There's also a series going on <a href="https://www.youtube.com/playlist?list=PL_kr51suci7WkVde-b09G4XHEWQrmzcpJ">building an entire app with React</a>, if that is your jam. And I plan to add much more content here in the future going in depth on JavaScript topics.</p><p>And if you want to say hi or chat about web development, you could always reach out to me on twitter at @foseberg. Thanks for reading!</p>
+                </div>
+                <hr>
+
+                <div class="post-full-author-header">
+                    
+<section class="author-card">
+    <img class="author-profile-image" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/Fredrik-Oseberg.png" alt="Fredrik Strand Oseberg">
+    <section class="author-card-content">
+        <h4 class="author-card-name"><a href="https://www.freecodecamp.org/news/author/fredrik/">Fredrik Strand Oseberg</a></h4>
+        <p>I'm a self-taught former entrepreneur turned web developer consultant. Knowledgeable in Javascript and Golang.</p>
+    </section>
+</section>
+
+
+                </div>
+                <hr>
+
+                <p class="social-row">
+
+    If you read this far, tweet to the author to show them you care. <a id="tweet-btn" class="cta-button">Tweet a thanks</a>
+</p>
+
+                
+<div class="learn-cta-row">
+    <p>
+        Learn to code for free. freeCodeCamp's open source curriculum has helped more than 40,000 people get jobs as developers. <a class="cta-button" href="https://www.freecodecamp.org/learn">Get started</a>
+    </p>
+</div>                  <script>
+    // Conditionally show comments section based on publication language setting
+    const showCommentsList = ['zh-cn'];
+
+    if (showCommentsList.includes(`en`)) {
+      const hostname = window.location.hostname;
+      const discourseEmbedMap = {
+        'www.freecodecamp.org': {
+          file: 'https://forum.freecodecamp.org/srv/status',
+          discourseUrl: 'https://forum.freecodecamp.org/'
+        },
+        'chinese.freecodecamp.org': {
+          file: 'https://chinese.freecodecamp.org/forum/srv/status',
+          discourseUrl: 'https://chinese.freecodecamp.org/forum/',
+        },
+        'dev': {
+          file: 'https://forum.freecodecamp.dev/srv/status',
+          discourseUrl: 'https://forum.freecodecamp.dev/'
+        },
+      };
+      const discourseEmbedInfo = discourseEmbedMap[hostname] ? discourseEmbedMap[hostname] : discourseEmbedMap['dev'];
+      const { file, discourseUrl } = discourseEmbedInfo;
+
+      function loadDiscourseComments() {
+        var xhr = new XMLHttpRequest();
+        var randomNum = Math.round(Math.random() * 10000);
+        xhr.open('HEAD', file + '?rand=' + randomNum, true);
+        xhr.send();
+        xhr.addEventListener('readystatechange', processRequest, false);
+        function processRequest(e) {
+          if (xhr.readyState == 4) {
+            if (xhr.status >= 200 && xhr.status < 304) {
+              document.getElementById('discourse-comments').innerHTML = '';
+              DiscourseEmbed = {
+                discourseUrl,
+                discourseEmbedUrl: 'https://www.freecodecamp.org/news/async-await-javascript-tutorial/'
+              };
+              var d = document.createElement('script');
+              d.type = 'text/javascript';
+              d.async = true;
+              d.src = discourseUrl + 'javascripts/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+            } else {
+              document.getElementById('discourse-comments').innerHTML =
+                '<div style="text-align: center;">Sorry, we could not load the comments. Please try again after some time.</div>';
+            }
+          }
+        }
+      }
+
+      if (window && window.addEventListener) {
+        // Create comments section
+        const commentsDivHtml = `
+          <div id='discourse-comments'>
+            <button id='trigger-load-comments'>Show comments</button>
+          </div>
+        `;
+        const fullContentSection = document.getElementsByClassName('post-full-content')[0];
+        fullContentSection.insertAdjacentHTML('beforeend', commentsDivHtml);
+
+        window.addEventListener('load', function () {
+          document.getElementById('trigger-load-comments').onclick = loadDiscourseComments;
+        });
+      }
+    }
+  </script>
+            </section>
+
+        </article>
+    </div>
+</main>
+
+
+
+
+        <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-desc-col">
+                <p>
+                    freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)
+                </p>
+                <p>
+                    Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.
+                </p>
+                <p>
+                    Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff.
+                </p>
+                <p class="footer-donation">
+                    You can <a href="https://freecodecamp.org/donate" class="inline" rel="noopener noreferrer" target="_blank">make a tax-deductible donation here</a>.
+                </p>
+            </div>
+            <div class="trending-guides">
+                <div class="col-header">Trending Guides</div>
+                <div class="trending-guides-row">
+                    <div class="footer-col footer-col-1">
+                        <a href="https://www.freecodecamp.org/news/what-is-docker-used-for-a-docker-container-tutorial-for-beginners/">What is Docker?</a>
+                        <a href="https://www.freecodecamp.org/news/what-is-tcp-ip-layers-and-protocols-explained/">TCP/IP Model</a>
+                        <a href="https://www.freecodecamp.org/news/rtf-file-what-is-the-rich-text-format/">RTF File</a>
+                        <a href="https://www.freecodecamp.org/news/css-transition-examples/">CSS Transition</a>
+                        <a href="https://www.freecodecamp.org/news/how-to-use-instagram-like-a-pro/">How to Use Instagram?</a>
+                        <a href="https://www.freecodecamp.org/news/mbr-vs-gpt-whats-the-difference-between-an-mbr-partition-and-a-gpt-partition-solved/">MBR VS GPT</a>
+                        <a href="https://www.freecodecamp.org/news/how-to-format-a-usb-drive-to-fat32-on-windows-10/">FAT32 Format</a>
+                        <a href="https://www.freecodecamp.org/news/http-error-503-service-unavailable-explained-what-the-503-error-code-means/">Error 503 Code</a>
+                        <a href="https://www.freecodecamp.org/news/how-to-find-and-edit-a-windows-hosts-file/">Windows Hosts File</a>
+                        <a href="https://www.freecodecamp.org/news/mobi-to-pdf-how-to-convert-to-and-from-a-mobi-file/">Mobi to PDF</a>
+                    </div>
+                    <div class="footer-col footer-col-2">
+                        <a href="https://www.freecodecamp.org/news/what-is-stem-the-meaning-of-an-acronym-youll-hear-a-lot-in-school/">What is STEM?</a>
+                        <a href="https://www.freecodecamp.org/news/javascript-void-keyword-explained/">JavaScript Void 0</a>
+                        <a href="https://www.freecodecamp.org/news/sql-delete-row-statement-examples/">SQL Delete Row</a>
+                        <a href="https://www.freecodecamp.org/news/javascript-string-replace-example-with-regex/">JavaScript Replace</a>
+                        <a href="https://www.freecodecamp.org/news/python-read-json-file-how-to-load-json-from-a-file-and-parse-dumps/">Python JSON Parser</a>
+                        <a href="https://www.freecodecamp.org/news/cmd-delete-folder-how-to-remove-files-and-folders-in-windows/">cmd Delete Folder</a>
+                        <a href="https://www.freecodecamp.org/news/what-is-nfc-near-field-communication-uses-chips-tags-and-readers-explained/">What is NFC?</a>
+                        <a href="https://www.freecodecamp.org/news/what-is-the-correct-content-type-for-json-request-header-mime-type-explained/">Content Type JSON</a>
+                        <a href="https://www.freecodecamp.org/news/heic-to-jpg-how-to-convert-images-on-a-mac/">Convert HEIC to JPG</a>
+                        <a href="https://www.freecodecamp.org/news/generate-random-numbers-java/">Math Random Java</a>
+                    </div>
+                    <div class="footer-col footer-col-3">
+                        <div class="footer-left">
+                            <a href="https://www.freecodecamp.org/news/how-to-start-a-blog-with-wordpress/">WordPress for Beginners</a>
+                            <a href="https://www.freecodecamp.org/news/qualitative-vs-quantitative-definition-research-methods-and-data/">Qualitative VS Quantitative</a>
+                            <a href="https://www.freecodecamp.org/news/javascript-split-string-example/">JavaScript Split String</a>
+                            <a href="https://www.freecodecamp.org/news/how-to-type-letters-with-accents-on-mac/">Accented Letters on Mac</a>
+                            <a href="https://www.freecodecamp.org/news/how-to-find-a-windows-10-product-key/">Windows 10 Product Key</a>
+                        </div>
+
+                        <div class="footer-right">
+                            <a href="https://www.freecodecamp.org/news/google-docs-landscape-tutorial-how-to-make-a-google-doc-landscape-orientation/">Google Docs Landscape</a>
+                            <a href="https://www.freecodecamp.org/news/antimalware-service-executable-what-is-msmpeng-exe-and-why-is-it-running-in-windows-10/">Antimalware Executable</a>
+                            <a href="https://www.freecodecamp.org/news/windows-10-start-menu-not-working-solved/">Windows 10 Start Menu</a>
+                            <a href="https://www.freecodecamp.org/news/how-to-open-the-command-prompt-in-windows-10/">Windows 10 Command Line</a>
+                            <a href="https://www.freecodecamp.org/news/google-account-recovery-change-gmail-password/">Google Account Recovery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="col-header">Our Nonprofit</div>
+            <div class="footer-divider"></div>
+            <div class="our-nonprofit">
+                <a href="https://www.freecodecamp.org/news/about/">About</a>
+                <a href="https://www.linkedin.com/school/free-code-camp/people/" rel="noopener noreferrer" target="_blank">Alumni Network</a>
+                <a href="https://github.com/freeCodeCamp/">Open Source</a>
+                <a href="https://www.freecodecamp.org/shop/" rel="noopener noreferrer" target="_blank">Shop</a>
+                <a href="https://www.freecodecamp.org/news/support/">Support</a>
+                <a href="https://www.freecodecamp.org/news/sponsors/">Sponsors</a>
+                <a href="https://www.freecodecamp.org/news/academic-honesty-policy/">Academic Honesty</a>
+                <a href="https://www.freecodecamp.org/news/code-of-conduct/">Code of Conduct</a>
+                <a href="https://www.freecodecamp.org/news/privacy-policy/">Privacy Policy</a>
+                <a href="https://www.freecodecamp.org/news/terms-of-service/">Terms of Service</a>
+                <a href="https://www.freecodecamp.org/news/copyright-policy/">Copyright Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+
+    <script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        })
+    </script>
+
+    <script src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/jquery-3.2.1.min.js.download" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+        </script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/jquery.fitvids.js.download"></script>
+
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-unescaped-markup.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-markup-templating.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-bash.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-c.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-clojure.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-cpp.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-csharp.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-css.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-docker.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-elixir.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-erlang.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-git.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-go.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-graphql.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-haskell.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-java.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-javascript.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-json.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-jsx.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-kotlin.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-lua.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-markup.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-php.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-python.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-r.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-ruby.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-rust.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-scala.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-sql.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-swift.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-typescript.min.js.download"></script>
+    <script type="text/javascript" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/prism-yaml.min.js.download"></script>
+
+    <script>
+    // Conditionally remove social-row based on the publication language setting
+    const hideSocialRowList = ['zh-cn'];
+    const socialRow = document.getElementsByClassName('social-row')[0];
+
+    if (hideSocialRowList.includes(`en`)) socialRow.remove();
+    else {
+        const title = `Async%20Await%20JavaScript%20Tutorial%20%E2%80%93%20How%20to%20Wait%20for%20a%20Function%20to%20Finish%20in%20JS`.replace(/'/g, '%27');
+        const twitter = `@foseberg`;
+        const url = window.location;
+        const thanks = `Thank%20you%20${twitter}%20for%20writing%20this%20helpful%20article%2e%0A%0A` + `${title}%0A%0A${url}`;
+        const button = document.getElementById('tweet-btn');
+        button.addEventListener('click', () => {
+            if (twitter) {
+                window.open(`https://twitter.com/intent/tweet?text=${thanks}`, `share-twitter`, `width=550, height=235`);
+                return false;
+            }
+            else {
+                window.open(`https://twitter.com/intent/tweet?text=${title}%0A%0A${url}`, `share-twitter`, `width=550, height=235`);
+                return false;
+            }
+        })
+        console.log(twitter)
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        // Start fitVids
+        var $postContent = $(".post-full-content");
+        $postContent.fitVids();
+        // End fitVids
+    });
+</script>
+
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D6RKKP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script defer="" src="./Async Await JavaScript Tutorial – How to Wait for a Function to Finish in JS_files/beacon.min.js.download" data-cf-beacon="{&quot;si&quot;:10,&quot;rayId&quot;:&quot;62196b33cf821a26&quot;,&quot;version&quot;:&quot;2021.2.0&quot;}"></script>
+
+
+</body></html>

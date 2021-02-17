@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://antonioleiva.com/listeners-several-functions-kotlin/ -->
+<html lang="en-US" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://antonioleiva.com/xmlrpc.php">
+
+	<script async="" src="./Listeners with several functions in Kotlin. How to make them shine__files/gtm.js.download"></script><script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+
+	<script>var et_site_url='https://antonioleiva.com';var et_post_id='26289';function et_core_page_resource_fallback(a,b){"undefined"===typeof b&&(b=a.sheet.cssRules&&0===a.sheet.cssRules.length);b&&(a.onerror=null,a.onload=null,a.href?a.href=et_site_url+"/?et_core_page_resource="+a.id+et_post_id:a.src&&(a.src=et_site_url+"/?et_core_page_resource="+a.id+et_post_id))}
+</script>
+	<!-- This site is optimized with the Yoast SEO plugin v15.8 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Listeners with several functions in Kotlin. How to make them shine?</title>
+	<meta name="description" content="Have you ever wondered if listeners with several functions in Kotlin can be reduced to something nicer? Here I give you a good amount of alternatives.">
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+	<link rel="canonical" href="https://antonioleiva.com/listeners-several-functions-kotlin/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Listeners with several functions in Kotlin. How to make them shine?">
+	<meta property="og:description" content="Have you ever wondered if listeners with several functions in Kotlin can be reduced to something nicer? Here I give you a good amount of alternatives.">
+	<meta property="og:url" content="https://antonioleiva.com/listeners-several-functions-kotlin/">
+	<meta property="og:site_name" content="Antonio Leiva">
+	<meta property="article:published_time" content="2017-12-06T15:00:33+00:00">
+	<meta property="article:modified_time" content="2018-10-24T06:19:49+00:00">
+	<meta property="og:image" content="https://antonioleiva.com/wp-content/uploads/2017/12/listener-several-functions.jpg">
+	<meta property="og:image:width" content="880">
+	<meta property="og:image:height" content="440">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@http://twitter.com/lime_cl">
+	<meta name="twitter:site" content="@lime_cl">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Antonio Leiva">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="9 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://antonioleiva.com/#website","url":"https://antonioleiva.com/","name":"Antonio Leiva","description":"Learn Kotlin for Android the easy way","potentialAction":[{"@type":"SearchAction","target":"https://antonioleiva.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://antonioleiva.com/listeners-several-functions-kotlin/#primaryimage","inLanguage":"en-US","url":"https://antonioleiva.com/wp-content/uploads/2017/12/listener-several-functions.jpg","width":880,"height":440},{"@type":"WebPage","@id":"https://antonioleiva.com/listeners-several-functions-kotlin/#webpage","url":"https://antonioleiva.com/listeners-several-functions-kotlin/","name":"Listeners with several functions in Kotlin. How to make them shine?","isPartOf":{"@id":"https://antonioleiva.com/#website"},"primaryImageOfPage":{"@id":"https://antonioleiva.com/listeners-several-functions-kotlin/#primaryimage"},"datePublished":"2017-12-06T15:00:33+00:00","dateModified":"2018-10-24T06:19:49+00:00","author":{"@id":"https://antonioleiva.com/#/schema/person/6bd859f42a5b57c21c96da56e6ee1ca2"},"description":"Have you ever wondered if listeners with several functions in Kotlin can be reduced to something nicer? Here I give you a good amount of alternatives.","breadcrumb":{"@id":"https://antonioleiva.com/listeners-several-functions-kotlin/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://antonioleiva.com/listeners-several-functions-kotlin/"]}]},{"@type":"BreadcrumbList","@id":"https://antonioleiva.com/listeners-several-functions-kotlin/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://antonioleiva.com/","url":"https://antonioleiva.com/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://antonioleiva.com/listeners-several-functions-kotlin/","url":"https://antonioleiva.com/listeners-several-functions-kotlin/","name":"Listeners with several functions in Kotlin. How to make them shine?"}}]},{"@type":"Person","@id":"https://antonioleiva.com/#/schema/person/6bd859f42a5b57c21c96da56e6ee1ca2","name":"Antonio Leiva","image":{"@type":"ImageObject","@id":"https://antonioleiva.com/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/6f41050776d43380d0d8dd8b02f0e360?s=96&d=mm&r=g","caption":"Antonio Leiva"},"description":"I'm in love with Kotlin. I've been learning about it for a couple of years, applying it to Android and digesting all this knowledge so that you can learn it with no effort.","sameAs":["https://antonioleiva.com","https://www.linkedin.com/in/antoniolg","https://twitter.com/http://twitter.com/lime_cl"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<link rel="dns-prefetch" href="https://widgets.wp.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://0.gravatar.com/">
+<link rel="dns-prefetch" href="https://1.gravatar.com/">
+<link rel="dns-prefetch" href="https://2.gravatar.com/">
+<link rel="alternate" type="application/rss+xml" title="Antonio Leiva » Feed" href="https://antonioleiva.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Antonio Leiva » Comments Feed" href="https://antonioleiva.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Antonio Leiva » Listeners with several functions in Kotlin. How to make them shine? Comments Feed" href="https://antonioleiva.com/listeners-several-functions-kotlin/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/antonioleiva.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.3"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Listeners with several functions in Kotlin. How to make them shine__files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<meta content="Divi Child v.1.0.0" name="generator"><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/style.min.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel="stylesheet" id="bcct_style-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/styles(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="countdown_dynamite-countdown-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/countdown.css" type="text/css" media="all">
+<link rel="stylesheet" id="sweetalert-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/sweetalert.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="tve_style_family_tve_flt-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/thrive_flat.css" type="text/css" media="all">
+<link rel="stylesheet" id="tve_leads_forms-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/frontend.css" type="text/css" media="all">
+<link rel="stylesheet" id="parent-style-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="child-style-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="divi-style-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/style(2).css" type="text/css" media="all">
+<link rel="stylesheet" id="et-builder-googlefonts-cached-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/css" type="text/css" media="all">
+<link rel="stylesheet" id="rgpd-comentarios-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/rgpd3.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="enlighterjs-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/enlighterjs.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="cmplz-cookie-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/cookieconsent.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/social-logos.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./Listeners with several functions in Kotlin. How to make them shine__files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/jquery.js.download" id="jquery-core-js"></script>
+<script type="text/javascript" id="jetpack_related-posts-js-extra">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/related-posts.min.js.download" id="jetpack_related-posts-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/countdown.js.download" id="countdown_dynamite-countdown-js"></script>
+<script type="text/javascript" id="countdown_dynamite-frontend-js-extra">
+/* <![CDATA[ */
+var ucd = {"ajaxurl":"https:\/\/antonioleiva.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/frontend.js.download" id="countdown_dynamite-frontend-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/sweetalert.min.js.download" id="sweetalert-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/mensaje-rgpd3.min.js.download" id="mensaje-rgpd-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/moxie.min.js.download" id="moxiejs-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/plupload.min.js.download" id="plupload-js"></script>
+<link rel="https://api.w.org/" href="https://antonioleiva.com/wp-json/"><link rel="alternate" type="application/json" href="https://antonioleiva.com/wp-json/wp/v2/posts/26289"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://antonioleiva.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://antonioleiva.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.5.3">
+<link rel="shortlink" href="https://wp.me/p30RI3-6Q1">
+<link rel="alternate" type="application/json+oembed" href="https://antonioleiva.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fantonioleiva.com%2Flisteners-several-functions-kotlin%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://antonioleiva.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fantonioleiva.com%2Flisteners-several-functions-kotlin%2F&amp;format=xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"><style type="text/css" id="tve_global_variables">:root{}</style><style type="text/css" id="thrive-default-styles"></style><link rel="icon" href="https://antonioleiva.com/wp-content/uploads/2017/08/cropped-logo-app-web-1-32x32.png" sizes="32x32">
+<link rel="icon" href="https://antonioleiva.com/wp-content/uploads/2017/08/cropped-logo-app-web-1-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://antonioleiva.com/wp-content/uploads/2017/08/cropped-logo-app-web-1-180x180.png">
+<meta name="msapplication-TileImage" content="https://antonioleiva.com/wp-content/uploads/2017/08/cropped-logo-app-web-1-270x270.png">
+<link rel="stylesheet" id="et-divi-customizer-global-cached-inline-styles" href="./Listeners with several functions in Kotlin. How to make them shine__files/et-divi-customizer-global-16127119310462.min.css" onerror="et_core_page_resource_fallback(this, true)" onload="et_core_page_resource_fallback(this)"><script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/be.js.download"></script><style>[data-columns]::before{visibility:hidden;position:absolute;font-size:1px;}</style><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><style type="text/css">#cc-window.cc-window .cc-compliance .cc-btn.cc-accept-all {color:#fff;background-color:#0085ba;border-color:#0073aa}#cc-window.cc-window .cc-compliance .cc-btn.cc-accept-all:hover{background-color:#26abe0}#cc-window.cc-window .cc-compliance .cc-btn.cc-dismiss{color:#0073aa;background-color:#f1f1f1;border-color:#f1f1f1}#cc-window.cc-window .cc-compliance .cc-btn.cc-dismiss:hover{background-color:#ffffff}#cc-window.cc-floating {max-width:476px;}</style><style></style></head>
+<body data-cmplz="1" class="post-template-default single single-post postid-26289 single-format-standard et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_slide et_secondary_nav_dropdown_animation_slide et_header_style_left et_pb_footer_columns4 et_cover_background et_pb_gutter et_pb_gutters3 et_right_sidebar et_divi_theme et-db et_minified_js et_minified_css chrome cmplz-status-deny tve-desktop-browser tve-chrome-browser"><div class="cc-revoke  cc-center cc-animate cc-color-override-323252138" style="">Manage consent</div><div id="cc-banner-wrap"><div id="cc-window" data-nosnippet="true" role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-floating cc-type-categories cc-theme-classic cc-center cc-color-override-323252138 cc-invisible cmplz-categories-hidden" style="display: none;"><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">We use our own and third-party cookies to analyze our services and show you advertising related to your preferences based on a profile drawn up from your browsing habits (for example, pages visited). <a aria-label="Cookie Policy" class="cc-link" href="https://antonioleiva.com/cookies-policy/">Cookie Policy</a></span><div class="cmplz-categories-wrap" style="display: none;"><label for="cmplz_functional"><input type="checkbox" id="cmplz_functional" class="cmplz-consent-checkbox cmplz-svg-checkbox cmplz-square-checkbox cmplz_functional" checked="" disabled="" data-category="cmplz_functional"><div class="cc-check"><svg width="16px" height="16px" viewBox="0 0 18 18" class="cmplz-square" aria-hidden="true"><path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path><polyline points="1 9 7 14 15 4"></polyline></svg></div><span class="cc-category" style="">Functional</span></label></div><div class="cmplz-categories-wrap" style="display: none;"><label for="cmplz_0"><input type="checkbox" id="cmplz_0" class="cmplz-consent-checkbox cmplz-svg-checkbox cmplz-square-checkbox cmplz_0" data-category="cmplz_0"><div class="cc-check"><svg width="16px" height="16px" viewBox="0 0 18 18" class="cmplz-square" aria-hidden="true"><path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path><polyline points="1 9 7 14 15 4"></polyline></svg></div><span class="cc-category" style="">Statistics</span></label></div><div class="cmplz-categories-wrap" style="display: none;"><label for="cmplz_marketing"><input type="checkbox" id="cmplz_marketing" class="cmplz-consent-checkbox cmplz-svg-checkbox cmplz-square-checkbox cmplz_marketing" data-category="cmplz_marketing"><div class="cc-check"><svg width="16px" height="16px" viewBox="0 0 18 18" class="cmplz-square" aria-hidden="true"><path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path><polyline points="1 9 7 14 15 4"></polyline></svg></div><span class="cc-category" style="">Marketing</span></label></div><style>#cc-window.cc-window .cmplz-categories-wrap .cc-check svg {stroke: #191e23}</style><div class="cc-compliance cc-highlight"><a aria-label="Accept all" href="https://antonioleiva.com/listeners-several-functions-kotlin/#" class="cc-btn cc-accept-all cc-btn-no-href">Accept all</a><a aria-label="Functional only" href="https://antonioleiva.com/listeners-several-functions-kotlin/#" class="cc-btn cc-dismiss cc-btn-no-href">Functional only</a><a aria-label="View preferences" href="https://antonioleiva.com/listeners-several-functions-kotlin/#" class="cc-btn cc-save cc-show-settings cc-btn-no-href">View preferences</a></div><!--googleon: all--></div></div>
+	<div id="page-container" class="et-animated-content" style="padding-top: 84px; margin-top: -27px;">
+
+	
+	
+			<header id="main-header" data-height-onload="84" data-height-loaded="true" data-fixed-height-onload="84" class="et-fixed-header" style="top: 0px;">
+			<div class="container clearfix et_menu_container">
+							<div class="logo_container">
+					<span class="logo_helper"></span>
+					<a href="https://antonioleiva.com/">
+						<img src="./Listeners with several functions in Kotlin. How to make them shine__files/logo.png" alt="Antonio Leiva" id="logo" data-height-percentage="54" data-actual-width="282" data-actual-height="88">
+					</a>
+				</div>
+							<div id="et-top-navigation" data-height="66" data-fixed-height="40" style="padding-left: 219px;">
+											<nav id="top-menu-nav">
+						<ul id="top-menu" class="nav"><li id="menu-item-633" class="menu-item menu-item-type-post_type menu-item-object-page current-post-parent menu-item-633"><a href="https://antonioleiva.com/about/">About me</a></li>
+<li id="menu-item-764" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-764"><a href="https://antonioleiva.com/kotlin-android-developers-book/">Book</a></li>
+<li id="menu-item-26496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26496"><a href="https://antonioleiva.com/online-course/">Online Course</a></li>
+<li id="menu-item-634" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-634"><a href="https://antonioleiva.com/category/blog/">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-762" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762"><a href="https://antonioleiva.com/kotlin/">Kotlin for Android Developers – Learn Kotlin in no time</a></li>
+	<li id="menu-item-763" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-763"><a href="https://antonioleiva.com/category/blog/">All</a></li>
+</ul>
+</li>
+<li id="menu-item-25588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25588"><a href="https://antonioleiva.com/contact/">Contact</a></li>
+<li id="menu-item-25590" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25590"><a href="https://antonioleiva.com/free-guide/"><strong style="color: red;">FREE GUIDE!</strong></a></li>
+</ul>						</nav>
+					
+					
+					
+										<div id="et_top_search">
+						<span id="et_search_icon"></span>
+					</div>
+					
+					<div id="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="select_page">Select Page</span>
+					<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+				<ul id="mobile_menu" class="et_mobile_menu"><li id="menu-item-633" class="menu-item menu-item-type-post_type menu-item-object-page current-post-parent menu-item-633 et_first_mobile_item"><a href="https://antonioleiva.com/about/">About me</a></li>
+<li id="menu-item-764" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-764"><a href="https://antonioleiva.com/kotlin-android-developers-book/">Book</a></li>
+<li id="menu-item-26496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26496"><a href="https://antonioleiva.com/online-course/">Online Course</a></li>
+<li id="menu-item-634" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-634"><a href="https://antonioleiva.com/category/blog/">Blog</a>
+<ul class="sub-menu">
+	<li id="menu-item-762" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-762"><a href="https://antonioleiva.com/kotlin/">Kotlin for Android Developers – Learn Kotlin in no time</a></li>
+	<li id="menu-item-763" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-763"><a href="https://antonioleiva.com/category/blog/">All</a></li>
+</ul>
+</li>
+<li id="menu-item-25588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25588"><a href="https://antonioleiva.com/contact/">Contact</a></li>
+<li id="menu-item-25590" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25590"><a href="https://antonioleiva.com/free-guide/"><strong style="color: red;">FREE GUIDE!</strong></a></li>
+</ul></div>
+			</div>				</div> <!-- #et-top-navigation -->
+			</div> <!-- .container -->
+			<div class="et_search_outer">
+				<div class="container et_search_form_container">
+					<form role="search" method="get" class="et-search-form" action="https://antonioleiva.com/">
+					<input type="search" class="et-search-field" placeholder="Search …" value="" name="s" title="Search for:">					</form>
+					<span class="et_close_search_field"></span>
+				</div>
+			</div>
+		</header> <!-- #main-header -->
+			<div id="et-main-area">
+	
+<div id="main-content">
+		<div class="container">
+		<div id="content-area" class="clearfix">
+			<div id="left-area">
+											<article id="post-26289" class="et_pb_post post-26289 post type-post status-publish format-standard has-post-thumbnail hentry category-blog category-development category-kotlin">
+											<div class="et_post_meta_wrapper">
+							<h1 class="entry-title">Listeners with several functions in Kotlin. How to make them shine?</h1>
+
+						<p class="post-meta"> by <span class="author vcard"><a href="https://antonioleiva.com/author/antoniolg/" title="Posts by Antonio Leiva" rel="author">Antonio Leiva</a></span> | <a href="https://antonioleiva.com/category/blog/" rel="category tag">Blog</a>, <a href="https://antonioleiva.com/category/blog/development/" rel="category tag">Development</a>, <a href="https://antonioleiva.com/category/blog/kotlin/" rel="category tag">Kotlin</a> | <span class="comments-number"><a href="https://antonioleiva.com/listeners-several-functions-kotlin/#respond" data-et-has-event-already="true">11 comments</a></span></p><img src="./Listeners with several functions in Kotlin. How to make them shine__files/listener-several-functions.jpg" alt="" class="" width="1080" height="675">
+												</div> <!-- .et_post_meta_wrapper -->
+				
+					<div class="entry-content">
+					<p>One question I get often is how to simplify the interaction with listeners that have several functions on Kotlin. For listeners (or any interfaces) with a single function is simple: it automatically lets you replace it by a lambda. But that’s not the case for listeners with several functions.</p>
+<p>So in this article I want to show you different ways to deal with the problem, and you may even learn some <a href="https://antonioleiva.com/kotlin-awesome-tricks-for-android/">new Kotlin tricks</a> on the way!</p>
+<h2>The problem</h2>
+<p>When we’re dealing with listeners, let’s say the <code>OnclickListener</code> for views, thanks to optimizations that Kotlin do over Java libraries, we can turn this:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">view.</span><span class="enlighter-m3">setOnClickListener</span><span class="enlighter-g1">(</span><span class="enlighter-text">object </span><span class="enlighter-g0">:</span><span class="enlighter-text"> View.</span><span class="enlighter-m3">OnClickListener</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    override fun </span><span class="enlighter-m0">onClick</span><span class="enlighter-g1">(</span><span class="enlighter-text">v: View?</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"View clicked!"</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">})</span></div></div></div><div class="enlighter-raw">view.setOnClickListener(object : View.OnClickListener {
+    override fun onClick(v: View?) {
+        toast("View clicked!")
+    }
+})</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">view.setOnClickListener(object : View.OnClickListener {
+    override fun onClick(v: View?) {
+        toast("View clicked!")
+    }
+})</pre>
+<p>into this:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">view.</span><span class="enlighter-m3">setOnClickListener</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"> </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"View clicked!"</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">view.setOnClickListener { toast("View clicked!") }</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">view.setOnClickListener { toast("View clicked!") }</pre>
+<p>The problem is that when we get used to it, we want it everywhere. But this doesn’t escalate when the interface has several functions.</p>
+<p>For instance, if we want to set a listener to a view animation, we end up with this “nice” code:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">view.</span><span class="enlighter-m3">animate</span><span class="enlighter-g1">()</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">alpha</span><span class="enlighter-g1">(</span><span class="enlighter-text">0f</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-text">object </span><span class="enlighter-g0">:</span><span class="enlighter-text"> Animator.</span><span class="enlighter-m3">AnimatorListener</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            override fun </span><span class="enlighter-m0">onAnimationStart</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator?</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">                </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation Start"</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            override fun </span><span class="enlighter-m0">onAnimationRepeat</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator?</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">                </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation Repeat"</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            override fun </span><span class="enlighter-m0">onAnimationEnd</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator?</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">                </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation End"</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            override fun </span><span class="enlighter-m0">onAnimationCancel</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator?</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">                </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation Cancel"</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-g1">})</span></div></div></div><div class="enlighter-raw">view.animate()
+        .alpha(0f)
+        .setListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(animation: Animator?) {
+                toast("Animation Start")
+            }
+
+            override fun onAnimationRepeat(animation: Animator?) {
+                toast("Animation Repeat")
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                toast("Animation End")
+            }
+
+            override fun onAnimationCancel(animation: Animator?) {
+                toast("Animation Cancel")
+            }
+        })</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">view.animate()
+        .alpha(0f)
+        .setListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(animation: Animator?) {
+                toast("Animation Start")
+            }
+
+            override fun onAnimationRepeat(animation: Animator?) {
+                toast("Animation Repeat")
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                toast("Animation End")
+            }
+
+            override fun onAnimationCancel(animation: Animator?) {
+                toast("Animation Cancel")
+            }
+        })</pre>
+<p>You may argue that the Android framework already gives a solution for it: the adapters. For almost any interface that has several methods, they provide an abstract class that implements all methods as empty. In the case above, you could have:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">view.</span><span class="enlighter-m3">animate</span><span class="enlighter-g1">()</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">alpha</span><span class="enlighter-g1">(</span><span class="enlighter-text">0f</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-text">object </span><span class="enlighter-g0">:</span><span class="enlighter-text"> </span><span class="enlighter-m0">AnimatorListenerAdapter</span><span class="enlighter-g1">()</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            override fun </span><span class="enlighter-m0">onAnimationEnd</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator?</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">                </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation End"</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-g1">})</span></div></div></div><div class="enlighter-raw">view.animate()
+        .alpha(0f)
+        .setListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator?) {
+                toast("Animation End")
+            }
+        })</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">view.animate()
+        .alpha(0f)
+        .setListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator?) {
+                toast("Animation End")
+            }
+        })</pre>
+<p>Ok, a little better, but this have a couple of issues:</p><div class="tve-leads-in-content tve-tl-anim tve-leads-track-in_content-10 tl-anim-instant tve-leads-triggered"><div class="tl-style" id="tve_tcb2_typography-2-2-step-with-lightbox_m1" data-state="10" data-form-state=""><style type="text/css" class="tve_custom_style">@import url("//fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=latin");@import url("//fonts.googleapis.com/css?family=Questrial:400&subset=latin");@media (min-width: 300px){[data-css="tve-u-35b868f6c76a1a"] h2 { margin: 0px !important; padding: 0px !important; }[data-css="tve-u-35b868f6c76a1a"] p { margin: 0px !important; padding: 0px !important; }[data-css="tve-u-05b868f6c76971"] { padding: 0px !important; background-color: rgb(255, 255, 255) !important; }[data-css="tve-u-15b868f6c769ab"] .tve-page-section-in { display: block; }[data-css="tve-u-115b868f6c76bbc"] > .tve-cb { display: flex; justify-content: center; flex-direction: column; }[data-css="tve-u-145b868f6c76c65"] { padding: 0px !important; margin-bottom: 25px !important; }[data-css="tve-u-165b868f6c76cd8"] { line-height: 1.45em !important; }[data-css="tve-u-135b868f6c76c2d"] h1 { margin: 0px !important; padding: 0px !important; }[data-css="tve-u-35b868f6c76a1a"] h3 { margin: 0px !important; padding: 0px !important; }[data-css="tve-u-35b868f6c76a1a"] h1 { margin: 0px !important; padding: 0px !important; }[data-css="tve-u-125b868f6c76bf3"] { clip-path: url("#clip-left-9k1p09zctzjd9"); background-color: rgb(252, 252, 252) !important; }[data-css="tve-u-115b868f6c76bbc"] { position: relative; z-index: 6; padding: 40px 60px !important; margin: 0px 0px 0px -16px !important; }[data-css="tve-u-135b868f6c76c2d"] { min-height: 212px; }[data-css="tve-u-75b868f6c76af6"] { background-image: linear-gradient(45deg, rgb(84, 0, 0) 25%, rgb(133, 0, 0) 100%), url("https://antonioleiva.com/wp-content/uploads/tve_leads_templates/in_content/tcb2_typography-2-2-step-with-lightbox_m1/images/Typography-2-bg-img.jpg") !important; background-size: auto, cover !important; background-position: 50% 50%, 50% 50% !important; background-attachment: scroll, scroll !important; background-repeat: no-repeat, no-repeat !important; margin-right: 0px !important; }[data-css="tve-u-105b868f6c76b84"] { padding: 0px !important; background-image: linear-gradient(rgb(252, 252, 252), rgb(252, 252, 252)) !important; background-size: auto !important; background-position: 50% 50% !important; background-attachment: scroll !important; background-repeat: no-repeat !important; }[data-css="tve-u-45b868f6c76a51"] { margin-top: 0px !important; }[data-css="tve-u-15b868f6c769ab"] { z-index: 0; border: 4px solid rgb(221, 221, 221); padding: 0px !important; margin-top: 0px !important; border-radius: 4px; overflow: hidden; }[data-css="tve-u-25b868f6c769e3"] { clip-path: url("#clip-right-01zhja9yummto"); background-color: rgb(255, 255, 255) !important; }[data-css="tve-u-95b868f6c76b65"] { max-width: 60.7%; }[data-css="tve-u-65b868f6c76abf"] { max-width: 39.3%; }[data-css="tve-u-55b868f6c76a88"] > .tcb-flex-col > .tcb-col { min-height: 1px; justify-content: center; }[data-css="tve-u-55b868f6c76a88"] > .tcb-flex-col { padding-left: 0px; }[data-css="tve-u-55b868f6c76a88"] { margin-left: 0px; min-height: inherit; padding: 0px !important; }[data-css="tve-u-35b868f6c76a1a"] { min-height: 1px !important; }:not(#tve) [data-css="tve-u-165b868f6c76cd8"] { letter-spacing: 1px; font-family: "Roboto Condensed" !important; font-weight: 400 !important; font-size: 27px !important; color: rgb(19, 20, 28) !important; }:not(#tve) [data-css="tve-u-175b868f6c76d10"]:hover .tcb-button-link span { color: rgb(59, 221, 139) !important; }:not(#tve) [data-css="tve-u-175b868f6c76d10"]:hover .tcb-button-link { background-image: none !important; background-color: rgb(237, 6, 6) !important; font-family: Questrial !important; font-weight: 400 !important; box-shadow: rgba(209, 73, 73, 0.15) 0px 3px 8px 0px !important; border-top: none rgb(255, 88, 88) !important; border-right: 2px dotted rgb(255, 0, 0) !important; border-bottom: none rgb(255, 88, 88) !important; border-left: 2px dotted rgb(255, 0, 0) !important; border-image: initial !important; }[data-css="tve-u-175b868f6c76d10"] .tcb-button-link { border-radius: 11px; overflow: hidden; background-image: none !important; background-color: rgb(255, 22, 22) !important; padding: 14px 22px; border-color: rgb(255, 88, 88); box-shadow: rgb(209, 73, 73) 0px 3px 8px 0px; }[data-css="tve-u-175b868f6c76d10"] { display: block; max-width: 270px; width: 270px; float: none; margin: 0px auto !important; }[data-css="tve-u-85b868f6c76b2d"] { width: 637px; margin-top: 31px !important; margin-bottom: 0px !important; }[data-css="tve-u-165b868f6c76cd8"] strong { font-weight: 700 !important; }[data-css="tve-u-155b868f6c76c9f"] { line-height: 1.45em !important; }:not(#tve) [data-css="tve-u-155b868f6c76c9f"] { letter-spacing: 1px; font-family: "Roboto Condensed" !important; font-weight: 400 !important; font-size: 37px !important; color: rgb(19, 20, 28) !important; }[data-css="tve-u-155b868f6c76c9f"] strong { font-weight: 700 !important; }:not(#tve) [data-css="tve-u-175b868f6c76d10"] .tcb-button-link { line-height: 1.2em; font-size: 24px; }:not(#tve) [data-css="tve-u-185b868f6c76d48"] { font-family: "Roboto Condensed" !important; font-weight: 400 !important; }[data-css="tve-u-185b868f6c76d48"] strong { font-weight: 700 !important; }}@media (max-width: 767px){:not(#tve) [data-css="tve-u-165b868f6c76cd8"] { font-size: 18px !important; }[data-css="tve-u-35b868f6c76a1a"] { max-width: 100%; }[data-css="tve-u-55b868f6c76a88"] .tcb-flex-col { flex-basis: 315px !important; }[data-css="tve-u-135b868f6c76c2d"] { min-height: 150px; }[data-css="tve-u-75b868f6c76af6"] { margin: 0px !important; }[data-css="tve-u-125b868f6c76bf3"] { clip-path: url("#clip-mobile-left-9k1p09zctzjd9"); }[data-css="tve-u-115b868f6c76bbc"] { padding: 20px !important; margin: 0px !important; }:not(#tve) [data-css="tve-u-155b868f6c76c9f"] { font-size: 18px !important; }}</style><style type="text/css" class="tve_user_custom_style">.tve-leads-conversion-object .thrv_heading h1,.tve-leads-conversion-object .thrv_heading h2,.tve-leads-conversion-object .thrv_heading h3{margin:0;padding:0}.tve-leads-conversion-object .thrv_text_element p,.tve-leads-conversion-object .thrv_text_element h1,.tve-leads-conversion-object .thrv_text_element h2,.tve-leads-conversion-object .thrv_text_element h3{margin:0}.tve-leads-conversion-object .thrv_heading h1,.tve-leads-conversion-object .thrv_heading h2,.tve-leads-conversion-object .thrv_heading h3{margin:0;padding:0}.tve-leads-conversion-object .thrv_text_element p,.tve-leads-conversion-object .thrv_text_element h1,.tve-leads-conversion-object .thrv_text_element h2,.tve-leads-conversion-object .thrv_text_element h3{margin:0}</style><div class="tve-leads-conversion-object" data-tl-type="in_content"><div class="tve_flt"><div id="tve_editor" class="tve_shortcode_editor"><div class="thrv-leads-form-box tve_no_drag tve_no_icons thrv_wrapper tve_editor_main_content thrv-leads-in-content tve_empty_dropzone" data-css="tve-u-05b868f6c76971"><div class="thrv_wrapper thrv-page-section safari-ios-decoration-fix" data-css="tve-u-15b868f6c769ab">
+<div class="tve-page-section-out" data-css="tve-u-25b868f6c769e3" data-clip-id="01zhja9yummto"><svg width="0" height="0" class="tve-decoration-svg"><defs></defs></svg></div>
+<div class="tve-page-section-in tve_empty_dropzone" data-css="tve-u-35b868f6c76a1a"><div class="thrv_wrapper thrv-columns" data-css="tve-u-45b868f6c76a51"><div class="tcb-flex-row tcb-resized v-2 tcb--cols--2" data-css="tve-u-55b868f6c76a88"><div class="tcb-flex-col c-33" data-css="tve-u-65b868f6c76abf" style=""><div class="tcb-col tve_empty_dropzone" data-css="tve-u-75b868f6c76af6"><div class="thrv_wrapper tve_image_caption" data-css="tve-u-85b868f6c76b2d"><span class="tve_image_frame" style="width: 100%;"><img class="tve_image wp-image-26716" alt="" width="637" height="726" title="kotlin-guide-cover" data-id="26716" src="./Listeners with several functions in Kotlin. How to make them shine__files/kotlin-guide-cover.png" style="width: 100%;"></span></div></div></div><div class="tcb-flex-col c-66" data-css="tve-u-95b868f6c76b65" style=""><div class="tcb-col tve_empty_dropzone" data-css="tve-u-105b868f6c76b84"><div class="thrv_wrapper thrv_contentbox_shortcode thrv-content-box safari-ios-decoration-fix" data-css="tve-u-115b868f6c76bbc" data-float="1">
+<div class="tve-content-box-background" data-css="tve-u-125b868f6c76bf3" data-clip-id="9k1p09zctzjd9"><svg width="0" height="0" class="tve-decoration-svg"><defs><clippath id="clip-left-9k1p09zctzjd9" class="decoration-clip clip-path-left" clipPathUnits="objectBoundingBox" data-screen="" decoration-type="divider" pointer-width="11" pointer-height="10" style="zigzag" clip-path="url(#clip-top-9k1p09zctzjd9)"><polygon points="0.1 0, 0.1 0.05, 0.1 0.05, 0 0.10277800000000001, 0.1 0.155556, 0 0.20833400000000002, 0.1 0.261112, 0 0.31389, 0.1 0.366668, 0 0.419446, 0.1 0.472224, 0 0.525002, 0.1 0.5777800000000001, 0 0.6305580000000001, 0.1 0.683336, 0 0.736114, 0.1 0.788892, 0 0.84167, 0.1 0.894448, 0 0.947226, 0.1 1.000004, 0 1, 1 1, 1 0"></polygon></clippath><clippath id="clip-mobile-left-9k1p09zctzjd9" class="decoration-clip clip-path-mobile-left" clipPathUnits="objectBoundingBox" data-screen="mobile-" decoration-type="none" pointer-width="0" pointer-height="0" style="zigzag" clip-path="url(#clip-top-9k1p09zctzjd9)"><polygon points="0 0, 0 1, 1 1, 1 0"></polygon></clippath><clippath id="clip-top-9k1p09zctzjd9" class="decoration-clip clip-path-top" clipPathUnits="objectBoundingBox" data-screen="" decoration-type="none" pointer-width="5" pointer-height="5" style="zigzag"><polygon points="0 0, 0 1, 1 1, 1 0"></polygon></clippath><clippath id="clip-mobile-left-9k1p09zctzjd9" class="decoration-clip clip-path-mobile-left" clipPathUnits="objectBoundingBox" data-screen="mobile-" decoration-type="none" pointer-width="11" pointer-height="10" style="zigzag" clip-path="url(#clip-mobile-top-9k1p09zctzjd9)"><polygon points="0 0, 0 1, 1 1, 1 0"></polygon></clippath><clippath id="clip-mobile-mobile-left-9k1p09zctzjd9" class="decoration-clip clip-path-mobile-mobile-left" clipPathUnits="objectBoundingBox" data-screen="mobile-" decoration-type="none" pointer-width="11" pointer-height="10" style="zigzag" clip-path="url(#clip-mobile-top-9k1p09zctzjd9)"><polygon points="0 0, 0 1, 1 1, 1 0"></polygon></clippath><clippath id="clip-mobile-top-9k1p09zctzjd9" class="decoration-clip clip-path-mobile-top" clipPathUnits="objectBoundingBox" data-screen="mobile-" decoration-type="none" pointer-width="47" pointer-height="33" style="curves"><polygon points="0 0, 0 1, 1 1, 1 0"></polygon><ellipse cx="0.25" cy="0.33" rx="0.250000" ry="0.33"></ellipse><ellipse cx="0.75" cy="0.33" rx="0.250000" ry="0.33"></ellipse></clippath></defs></svg></div>
+<div class="tve-cb tve_empty_dropzone" data-css="tve-u-135b868f6c76c2d"><div class="thrv_wrapper thrv_text_element tve_empty_dropzone" data-css="tve-u-145b868f6c76c65"><p data-css="tve-u-155b868f6c76c9f" style="text-align: center;"><strong>Want to learn Kotlin?</strong></p></div><div class="thrv_wrapper thrv_text_element tve_empty_dropzone" data-css="tve-u-145b868f6c76c65"><p data-css="tve-u-165b868f6c76cd8" style="text-align: center;">Check my <strong>free guide</strong> to create your first project in 15 minutes!</p></div><div class="thrv_wrapper thrv-button" data-css="tve-u-175b868f6c76d10" data-tcb_hover_state_parent="" data-button-style="" data-button-size="m" style="display: none;"><a href="https://antonioleiva.com/free-guide/" class="tcb-button-link">
+<span class="tcb-button-texts"><span class="tcb-button-text thrv-inline-text" data-css="tve-u-185b868f6c76d48"><strong>GET THE FREE GUIDE</strong></span></span>
+</a></div></div>
+</div></div></div></div></div></div>
+</div></div></div></div></div></div></div>
+<ul>
+<li>The adapters are classes, which means that if we want a class to act as an implementation of this adapter, it cannot extend anything else.</li>
+<li>We get back to the old school days, where we need an anonymous object and a function to represent something that it’s clearer with a lambda.</li>
+</ul>
+<p>What options do we have?</p>
+<h2>Interfaces in Kotlin: they can contain code</h2>
+<p>Remember when we talked about <a href="https://antonioleiva.com/interfaces-kotlin/">interfaces in Kotlin</a>? They can have code, and as such, you can declare adapters that can be implemented instead of extended (you can do the same with Java 8 and default methods in interfaces, in case you’re using it for Android now):</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">interface MyAnimatorListenerAdapter </span><span class="enlighter-g0">:</span><span class="enlighter-text"> Animator.</span><span class="enlighter-m3">AnimatorListener</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    override fun </span><span class="enlighter-m0">onAnimationStart</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> = Unit</span></div></div><div class=""><div><span class="enlighter-text">    override fun </span><span class="enlighter-m0">onAnimationRepeat</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> = Unit</span></div></div><div class=""><div><span class="enlighter-text">    override fun </span><span class="enlighter-m0">onAnimationCancel</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> = Unit</span></div></div><div class=""><div><span class="enlighter-text">    override fun </span><span class="enlighter-m0">onAnimationEnd</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> = Unit</span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">interface MyAnimatorListenerAdapter : Animator.AnimatorListener {
+    override fun onAnimationStart(animation: Animator) = Unit
+    override fun onAnimationRepeat(animation: Animator) = Unit
+    override fun onAnimationCancel(animation: Animator) = Unit
+    override fun onAnimationEnd(animation: Animator) = Unit
+}</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">interface MyAnimatorListenerAdapter : Animator.AnimatorListener {
+    override fun onAnimationStart(animation: Animator) = Unit
+    override fun onAnimationRepeat(animation: Animator) = Unit
+    override fun onAnimationCancel(animation: Animator) = Unit
+    override fun onAnimationEnd(animation: Animator) = Unit
+}</pre>
+<p>With this, all functions will do nothing by default, and this means that a class can implement this interface and only declare the ones it needs:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">class MainActivity </span><span class="enlighter-g0">:</span><span class="enlighter-text"> </span><span class="enlighter-m0">AppCompatActivity</span><span class="enlighter-g1">()</span><span class="enlighter-text">, MyAnimatorListenerAdapter </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    ...</span></div></div><div class=""><div><span class="enlighter-text">    override fun </span><span class="enlighter-m0">onAnimationEnd</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation End"</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">class MainActivity : AppCompatActivity(), MyAnimatorListenerAdapter {
+    ...
+    override fun onAnimationEnd(animation: Animator) {
+        toast("Animation End")
+    }
+}</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">class MainActivity : AppCompatActivity(), MyAnimatorListenerAdapter {
+    ...
+    override fun onAnimationEnd(animation: Animator) {
+        toast("Animation End")
+    }
+}</pre>
+<p>After that, you can just use it as the argument for the listener:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">view.</span><span class="enlighter-m3">animate</span><span class="enlighter-g1">()</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">alpha</span><span class="enlighter-g1">(</span><span class="enlighter-text">0f</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-k1">this</span><span class="enlighter-g1">)</span></div></div></div><div class="enlighter-raw">view.animate()
+        .alpha(0f)
+        .setListener(this)</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">view.animate()
+        .alpha(0f)
+        .setListener(this)</pre>
+<p>This solution eliminates one of the problems I explained at the beginning, but it forces us to still declare explicit functions for it. Missing lambdas here?</p>
+<p>Besides, though this may save from using inheritance from time to time, for most cases you’ll still be using the anonymous objects, which is exactly the same as using the framework adapters.</p>
+<p>But hey! This is an interesting idea: if you need an adapter for listeners with several functions, <strong>better use interfaces rather than abstract classes</strong>. <a href="https://en.wikipedia.org/wiki/Composition_over_inheritance" target="_blank" rel="noopener">Composition over inheritance FTW</a>.</p>
+<h2>Extension functions for common cases</h2>
+<p>Let’s move to cleaner solutions. It may happen (as in the case above) that most times you just need the same function, and not much interested in the other. For <code>AnimatorListener</code>, the most used one is usually <code>onAnimationEnd</code>. So why not creating an <a href="https://antonioleiva.com/extension-functions-kotlin/">extension function</a> covering just that case?</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">view.</span><span class="enlighter-m3">animate</span><span class="enlighter-g1">()</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">alpha</span><span class="enlighter-g1">(</span><span class="enlighter-text">0f</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .onAnimationEnd </span><span class="enlighter-g1">{</span><span class="enlighter-text"> </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation End"</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">view.animate()
+        .alpha(0f)
+        .onAnimationEnd { toast("Animation End") }</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">view.animate()
+        .alpha(0f)
+        .onAnimationEnd { toast("Animation End") }</pre>
+<p>That’s nice! The extension function is applied to <code>ViewPropertyAnimator</code>, which is what <code>animate()</code>, <code>alpha</code>, and all other animation functions return.</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">inline fun ViewPropertyAnimator.</span><span class="enlighter-m3">onAnimationEnd</span><span class="enlighter-g1">(</span><span class="enlighter-text">crossinline continuation: </span><span class="enlighter-g1">(</span><span class="enlighter-text">Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> -</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text"> Unit</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-m0">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-text">object </span><span class="enlighter-g0">:</span><span class="enlighter-text"> </span><span class="enlighter-m0">AnimatorListenerAdapter</span><span class="enlighter-g1">()</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        override fun </span><span class="enlighter-m0">onAnimationEnd</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            </span><span class="enlighter-m0">continuation</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-g1">})</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">inline fun ViewPropertyAnimator.onAnimationEnd(crossinline continuation: (Animator) -&gt; Unit) {
+    setListener(object : AnimatorListenerAdapter() {
+        override fun onAnimationEnd(animation: Animator) {
+            continuation(animation)
+        }
+    })
+}</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">inline fun ViewPropertyAnimator.onAnimationEnd(crossinline continuation: (Animator) -&gt; Unit) {
+    setListener(object : AnimatorListenerAdapter() {
+        override fun onAnimationEnd(animation: Animator) {
+            continuation(animation)
+        }
+    })
+}</pre>
+<blockquote><p>I’ve<a href="https://antonioleiva.com/lambdas-kotlin/"> talked about <code>inline</code> before</a>, but if you still have some doubts, I recommend you to take a look at the <a href="https://kotlinlang.org/docs/reference/inline-functions.html" target="_blank" rel="noopener">official reference</a>.</p></blockquote>
+<p>As you see, the function just receives a lambda that is called when the animation ends. The extension does the nasty work for us: it creates the adapter and calls <code>setListener</code>.</p>
+<p>That’s much better! We could create one extension function per function in the listener. But in this particular case, <strong>we have the problem that the animator only accepts one listener</strong>. So we can only use one at a time.</p>
+<p>In any case, for the most repeating cases (like this one), it doesn’t hurt having a function like this. It’s the simpler solution, very easy to read and to understand.</p>
+<h2>Using named arguments and default values</h2>
+<p>But one of the reasons why you and I love Kotlin is that it has lots of amazing features to clean up our code! So you may imagine we still have some alternatives. Next one would be to make use of named arguments: this lets us define lambdas and explicitly say what they are being used for, which will highly improve readability.</p>
+<p>We can have a function similar to the one above, but covering all the cases:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">inline fun ViewPropertyAnimator.</span><span class="enlighter-m3">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        crossinline animationStart: </span><span class="enlighter-g1">(</span><span class="enlighter-text">Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> -</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text"> Unit,</span></div></div><div class=""><div><span class="enlighter-text">        crossinline animationRepeat: </span><span class="enlighter-g1">(</span><span class="enlighter-text">Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> -</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text"> Unit,</span></div></div><div class=""><div><span class="enlighter-text">        crossinline animationCancel: </span><span class="enlighter-g1">(</span><span class="enlighter-text">Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> -</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text"> Unit,</span></div></div><div class=""><div><span class="enlighter-text">        crossinline animationEnd: </span><span class="enlighter-g1">(</span><span class="enlighter-text">Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> -</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text"> Unit</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-m0">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-text">object </span><span class="enlighter-g0">:</span><span class="enlighter-text"> </span><span class="enlighter-m0">AnimatorListenerAdapter</span><span class="enlighter-g1">()</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        override fun </span><span class="enlighter-m0">onAnimationStart</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            </span><span class="enlighter-m0">animationStart</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        override fun </span><span class="enlighter-m0">onAnimationRepeat</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            </span><span class="enlighter-m0">animationRepeat</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        override fun </span><span class="enlighter-m0">onAnimationCancel</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            </span><span class="enlighter-m0">animationCancel</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        override fun </span><span class="enlighter-m0">onAnimationEnd</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            </span><span class="enlighter-m0">animationEnd</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-g1">})</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">inline fun ViewPropertyAnimator.setListener(
+        crossinline animationStart: (Animator) -&gt; Unit,
+        crossinline animationRepeat: (Animator) -&gt; Unit,
+        crossinline animationCancel: (Animator) -&gt; Unit,
+        crossinline animationEnd: (Animator) -&gt; Unit) {
+
+    setListener(object : AnimatorListenerAdapter() {
+        override fun onAnimationStart(animation: Animator) {
+            animationStart(animation)
+        }
+
+        override fun onAnimationRepeat(animation: Animator) {
+            animationRepeat(animation)
+        }
+
+        override fun onAnimationCancel(animation: Animator) {
+            animationCancel(animation)
+        }
+
+        override fun onAnimationEnd(animation: Animator) {
+            animationEnd(animation)
+        }
+    })
+}</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">inline fun ViewPropertyAnimator.setListener(
+        crossinline animationStart: (Animator) -&gt; Unit,
+        crossinline animationRepeat: (Animator) -&gt; Unit,
+        crossinline animationCancel: (Animator) -&gt; Unit,
+        crossinline animationEnd: (Animator) -&gt; Unit) {
+
+    setListener(object : AnimatorListenerAdapter() {
+        override fun onAnimationStart(animation: Animator) {
+            animationStart(animation)
+        }
+
+        override fun onAnimationRepeat(animation: Animator) {
+            animationRepeat(animation)
+        }
+
+        override fun onAnimationCancel(animation: Animator) {
+            animationCancel(animation)
+        }
+
+        override fun onAnimationEnd(animation: Animator) {
+            animationEnd(animation)
+        }
+    })
+}</pre>
+<p>The function itself is not very nice, but that will usually be the case with extension functions. They’re hiding the dirty parts of the framework, so someone has to do the hard work. Now you can use it like this:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">view.</span><span class="enlighter-m3">animate</span><span class="enlighter-g1">()</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">alpha</span><span class="enlighter-g1">(</span><span class="enlighter-text">0f</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">                animationStart = </span><span class="enlighter-g1">{</span><span class="enlighter-text"> </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation start"</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">}</span><span class="enlighter-text">,</span></div></div><div class=""><div><span class="enlighter-text">                animationRepeat = </span><span class="enlighter-g1">{</span><span class="enlighter-text"> </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation repeat"</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">}</span><span class="enlighter-text">,</span></div></div><div class=""><div><span class="enlighter-text">                animationCancel = </span><span class="enlighter-g1">{</span><span class="enlighter-text"> </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation cancel"</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">}</span><span class="enlighter-text">,</span></div></div><div class=""><div><span class="enlighter-text">                animationEnd = </span><span class="enlighter-g1">{</span><span class="enlighter-text"> </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation end"</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-g1">)</span></div></div></div><div class="enlighter-raw">view.animate()
+        .alpha(0f)
+        .setListener(
+                animationStart = { toast("Animation start") },
+                animationRepeat = { toast("Animation repeat") },
+                animationCancel = { toast("Animation cancel") },
+                animationEnd = { toast("Animation end") }
+        )</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">view.animate()
+        .alpha(0f)
+        .setListener(
+                animationStart = { toast("Animation start") },
+                animationRepeat = { toast("Animation repeat") },
+                animationCancel = { toast("Animation cancel") },
+                animationEnd = { toast("Animation end") }
+        )</pre>
+<p>Thanks to the named arguments, it’s clear what’s happening here.</p>
+<p>You will need to make sure that nobody uses this without named arguments, otherwise it becomes a little mess:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">view.</span><span class="enlighter-m3">animate</span><span class="enlighter-g1">()</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">alpha</span><span class="enlighter-g1">(</span><span class="enlighter-text">0f</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">                </span><span class="enlighter-g1">{</span><span class="enlighter-text"> </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation start"</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">}</span><span class="enlighter-text">,</span></div></div><div class=""><div><span class="enlighter-text">                </span><span class="enlighter-g1">{</span><span class="enlighter-text"> </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation repeat"</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">}</span><span class="enlighter-text">,</span></div></div><div class=""><div><span class="enlighter-text">                </span><span class="enlighter-g1">{</span><span class="enlighter-text"> </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation cancel"</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">}</span><span class="enlighter-text">,</span></div></div><div class=""><div><span class="enlighter-text">                </span><span class="enlighter-g1">{</span><span class="enlighter-text"> </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation end"</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-g1">)</span></div></div></div><div class="enlighter-raw">view.animate()
+        .alpha(0f)
+        .setListener(
+                { toast("Animation start") },
+                { toast("Animation repeat") },
+                { toast("Animation cancel") },
+                { toast("Animation end") }
+        )</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">view.animate()
+        .alpha(0f)
+        .setListener(
+                { toast("Animation start") },
+                { toast("Animation repeat") },
+                { toast("Animation cancel") },
+                { toast("Animation end") }
+        )</pre>
+<p>Anyway, this solution still forces us to implement all functions. But it’s easy to solve: just use <a href="https://antonioleiva.com/kotlin-android-extension-functions/">default values for the arguments</a>. Empty lambdas will make it:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">inline fun ViewPropertyAnimator.</span><span class="enlighter-m3">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        crossinline animationStart: </span><span class="enlighter-g1">(</span><span class="enlighter-text">Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> -</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text"> Unit = </span><span class="enlighter-g1">{}</span><span class="enlighter-text">,</span></div></div><div class=""><div><span class="enlighter-text">        crossinline animationRepeat: </span><span class="enlighter-g1">(</span><span class="enlighter-text">Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> -</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text"> Unit = </span><span class="enlighter-g1">{}</span><span class="enlighter-text">,</span></div></div><div class=""><div><span class="enlighter-text">        crossinline animationCancel: </span><span class="enlighter-g1">(</span><span class="enlighter-text">Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> -</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text"> Unit = </span><span class="enlighter-g1">{}</span><span class="enlighter-text">,</span></div></div><div class=""><div><span class="enlighter-text">        crossinline animationEnd: </span><span class="enlighter-g1">(</span><span class="enlighter-text">Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> -</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text"> Unit = </span><span class="enlighter-g1">{})</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    ...</span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">inline fun ViewPropertyAnimator.setListener(
+        crossinline animationStart: (Animator) -&gt; Unit = {},
+        crossinline animationRepeat: (Animator) -&gt; Unit = {},
+        crossinline animationCancel: (Animator) -&gt; Unit = {},
+        crossinline animationEnd: (Animator) -&gt; Unit = {}) {
+
+    ...
+}</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">inline fun ViewPropertyAnimator.setListener(
+        crossinline animationStart: (Animator) -&gt; Unit = {},
+        crossinline animationRepeat: (Animator) -&gt; Unit = {},
+        crossinline animationCancel: (Animator) -&gt; Unit = {},
+        crossinline animationEnd: (Animator) -&gt; Unit = {}) {
+
+    ...
+}</pre>
+<p>And now you can do:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">view.</span><span class="enlighter-m3">animate</span><span class="enlighter-g1">()</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">alpha</span><span class="enlighter-g1">(</span><span class="enlighter-text">0f</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">                animationEnd = </span><span class="enlighter-g1">{</span><span class="enlighter-text"> </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation end"</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-g1">)</span></div></div></div><div class="enlighter-raw">view.animate()
+        .alpha(0f)
+        .setListener(
+                animationEnd = { toast("Animation end") }
+        )</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">view.animate()
+        .alpha(0f)
+        .setListener(
+                animationEnd = { toast("Animation end") }
+        )</pre>
+<p>Not bad, right? A little more complex than the previous option, but much more flexible.</p>
+<h2>The killer option: DSLs</h2>
+<p>So far, I’ve been explaining simple solutions, which honestly may cover most cases. But if you want to go crazy, you can even create a small DSL that makes things even more explicit.</p>
+<p>The idea, which is <a href="https://github.com/Kotlin/anko/blob/master/anko/library/generated/sdk23-listeners/src/Listeners.kt" target="_blank" rel="noopener">taken from how Anko implements some listeners</a>, is to create a helper which implements a set of functions that receive a lambda. This lambda will be called in the corresponding implementation of the interface. I want to show you the result first, and then explain the code that makes it real:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">view.</span><span class="enlighter-m3">animate</span><span class="enlighter-g1">()</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">alpha</span><span class="enlighter-g1">(</span><span class="enlighter-text">0f</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .setListener </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            onAnimationStart </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">                </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation start"</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            onAnimationEnd </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">                </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Animation End"</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">view.animate()
+        .alpha(0f)
+        .setListener {
+            onAnimationStart {
+                toast("Animation start")
+            }
+            onAnimationEnd {
+                toast("Animation End")
+            }
+        }</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">view.animate()
+        .alpha(0f)
+        .setListener {
+            onAnimationStart {
+                toast("Animation start")
+            }
+            onAnimationEnd {
+                toast("Animation End")
+            }
+        }</pre>
+<p>See? This is using a small DSL to define animation listeners, and we just call the functions that we need. For simple behaviours, those functions can be one-liners:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">view.</span><span class="enlighter-m3">animate</span><span class="enlighter-g1">()</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .</span><span class="enlighter-m1">alpha</span><span class="enlighter-g1">(</span><span class="enlighter-text">0f</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        .setListener </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            onAnimationStart </span><span class="enlighter-g1">{</span><span class="enlighter-text"> </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"Start"</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">            onAnimationEnd </span><span class="enlighter-g1">{</span><span class="enlighter-text"> </span><span class="enlighter-m0">toast</span><span class="enlighter-g1">(</span><span class="enlighter-s0">"End"</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        </span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">view.animate()
+        .alpha(0f)
+        .setListener {
+            onAnimationStart { toast("Start") }
+            onAnimationEnd { toast("End") }
+        }</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">view.animate()
+        .alpha(0f)
+        .setListener {
+            onAnimationStart { toast("Start") }
+            onAnimationEnd { toast("End") }
+        }</pre>
+<p>This has two pros over the previous solution:</p>
+<ul>
+<li><strong>It’s a little cleaner</strong>: you save some characters here, though honestly not worth the effort only because of that</li>
+<li><strong>It’s more explicit</strong>: it forces the developer say which action they’re overriding. In the previous option, it was up to the developer to set the named argument. Here there’s no option but to call the function.</li>
+</ul>
+<p>So it’s essentially a less-prone-to-error solution.</p>
+<p>Now to the implementation. First, you still need an extension function:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">fun ViewPropertyAnimator.</span><span class="enlighter-m3">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-text">init: AnimListenerHelper.</span><span class="enlighter-g1">()</span><span class="enlighter-text"> -</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text"> Unit</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    val listener = </span><span class="enlighter-m0">AnimListenerHelper</span><span class="enlighter-g1">()</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    listener.</span><span class="enlighter-m3">init</span><span class="enlighter-g1">()</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-k1">this</span><span class="enlighter-text">.</span><span class="enlighter-m3">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-text">listener</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">fun ViewPropertyAnimator.setListener(init: AnimListenerHelper.() -&gt; Unit) {
+    val listener = AnimListenerHelper()
+    listener.init()
+    this.setListener(listener)
+}</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">fun ViewPropertyAnimator.setListener(init: AnimListenerHelper.() -&gt; Unit) {
+    val listener = AnimListenerHelper()
+    listener.init()
+    this.setListener(listener)
+}</pre>
+<p>This function just gets a <a href="https://tech.io/playgrounds/6973/kotlin-function-literal-with-receiver" target="_blank" rel="noopener">lambda with receiver</a> applied to a new class called <code>AnimListenerHelper</code>. It creates an instance of this class, makes it call the lambda, and sets the instance as the listener, as it’s implementing the corresponding interface. Let’s see how <code>AnimeListenerHelper</code> is implemented:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">class AnimListenerHelper </span><span class="enlighter-g0">:</span><span class="enlighter-text"> Animator.</span><span class="enlighter-m3">AnimatorListener</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    ...</span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">class AnimListenerHelper : Animator.AnimatorListener {
+    ...
+}</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">class AnimListenerHelper : Animator.AnimatorListener {
+    ...
+}</pre>
+<p>Then, for each function, it needs:</p>
+<ul>
+<li>A property that saves the lambda</li>
+<li>The function for the DSL, that receives the lambda executed when the function of the original interface is called</li>
+<li>The overriden function from the original interface</li>
+</ul>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">private var animationStart: AnimListener? = </span><span class="enlighter-k1">null</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">fun </span><span class="enlighter-m0">onAnimationStart</span><span class="enlighter-g1">(</span><span class="enlighter-text">onAnimationStart: AnimListener</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    animationStart = onAnimationStart</span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">override fun </span><span class="enlighter-m0">onAnimationStart</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    animationStart?.</span><span class="enlighter-m1">invoke</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">private var animationStart: AnimListener? = null
+
+fun onAnimationStart(onAnimationStart: AnimListener) {
+    animationStart = onAnimationStart
+}
+
+override fun onAnimationStart(animation: Animator) {
+    animationStart?.invoke(animation)
+}</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">private var animationStart: AnimListener? = null
+
+fun onAnimationStart(onAnimationStart: AnimListener) {
+    animationStart = onAnimationStart
+}
+
+override fun onAnimationStart(animation: Animator) {
+    animationStart?.invoke(animation)
+}</pre>
+<p>Here I’m using a <a href="https://kotlinlang.org/docs/reference/type-aliases.html" target="_blank" rel="noopener">type alias</a> for <code>AnimListener</code>:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">private typealias AnimListener = </span><span class="enlighter-g1">(</span><span class="enlighter-text">Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> -</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text"> Unit</span></div></div></div><div class="enlighter-raw">private typealias AnimListener = (Animator) -&gt; Unit</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">private typealias AnimListener = (Animator) -&gt; Unit</pre>
+<p>This would be the complete code:</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-classic enlighter-hover enlighter-linenumbers "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">fun ViewPropertyAnimator.</span><span class="enlighter-m3">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-text">init: AnimListenerHelper.</span><span class="enlighter-g1">()</span><span class="enlighter-text"> -</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text"> Unit</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    val listener = </span><span class="enlighter-m0">AnimListenerHelper</span><span class="enlighter-g1">()</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    listener.</span><span class="enlighter-m3">init</span><span class="enlighter-g1">()</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-k1">this</span><span class="enlighter-text">.</span><span class="enlighter-m3">setListener</span><span class="enlighter-g1">(</span><span class="enlighter-text">listener</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">private typealias AnimListener = </span><span class="enlighter-g1">(</span><span class="enlighter-text">Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> -</span><span class="enlighter-g1">&gt;</span><span class="enlighter-text"> Unit</span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-k1">class</span><span class="enlighter-text"> AnimListenerHelper </span><span class="enlighter-g0">:</span><span class="enlighter-text"> Animator.</span><span class="enlighter-m3">AnimatorListener</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    private var animationStart: AnimListener? = </span><span class="enlighter-k1">null</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    fun </span><span class="enlighter-m0">onAnimationStart</span><span class="enlighter-g1">(</span><span class="enlighter-text">onAnimationStart: AnimListener</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        animationStart = onAnimationStart</span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    override fun </span><span class="enlighter-m0">onAnimationStart</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        animationStart?.</span><span class="enlighter-m1">invoke</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    private var animationRepeat: AnimListener? = </span><span class="enlighter-k1">null</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    fun </span><span class="enlighter-m0">onAnimationRepeat</span><span class="enlighter-g1">(</span><span class="enlighter-text">onAnimationRepeat: AnimListener</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        animationRepeat = onAnimationRepeat</span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    override fun </span><span class="enlighter-m0">onAnimationRepeat</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        animationRepeat?.</span><span class="enlighter-m1">invoke</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    private var animationCancel: AnimListener? = </span><span class="enlighter-k1">null</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    fun </span><span class="enlighter-m0">onAnimationCancel</span><span class="enlighter-g1">(</span><span class="enlighter-text">onAnimationCancel: AnimListener</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        animationCancel = onAnimationCancel</span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    override fun </span><span class="enlighter-m0">onAnimationCancel</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        animationCancel?.</span><span class="enlighter-m1">invoke</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    private var animationEnd: AnimListener? = </span><span class="enlighter-k1">null</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    fun </span><span class="enlighter-m0">onAnimationEnd</span><span class="enlighter-g1">(</span><span class="enlighter-text">onAnimationEnd: AnimListener</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        animationEnd = onAnimationEnd</span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    override fun </span><span class="enlighter-m0">onAnimationEnd</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation: Animator</span><span class="enlighter-g1">)</span><span class="enlighter-text"> </span><span class="enlighter-g1">{</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">        animationEnd?.</span><span class="enlighter-m1">invoke</span><span class="enlighter-g1">(</span><span class="enlighter-text">animation</span><span class="enlighter-g1">)</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-g1">}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-g1">}</span></div></div></div><div class="enlighter-raw">fun ViewPropertyAnimator.setListener(init: AnimListenerHelper.() -&gt; Unit) {
+    val listener = AnimListenerHelper()
+    listener.init()
+    this.setListener(listener)
+}
+
+private typealias AnimListener = (Animator) -&gt; Unit
+
+class AnimListenerHelper : Animator.AnimatorListener {
+
+    private var animationStart: AnimListener? = null
+
+    fun onAnimationStart(onAnimationStart: AnimListener) {
+        animationStart = onAnimationStart
+    }
+
+    override fun onAnimationStart(animation: Animator) {
+        animationStart?.invoke(animation)
+    }
+
+    private var animationRepeat: AnimListener? = null
+
+    fun onAnimationRepeat(onAnimationRepeat: AnimListener) {
+        animationRepeat = onAnimationRepeat
+    }
+
+    override fun onAnimationRepeat(animation: Animator) {
+        animationRepeat?.invoke(animation)
+    }
+
+    private var animationCancel: AnimListener? = null
+
+    fun onAnimationCancel(onAnimationCancel: AnimListener) {
+        animationCancel = onAnimationCancel
+    }
+
+    override fun onAnimationCancel(animation: Animator) {
+        animationCancel?.invoke(animation)
+    }
+
+    private var animationEnd: AnimListener? = null
+
+    fun onAnimationEnd(onAnimationEnd: AnimListener) {
+        animationEnd = onAnimationEnd
+    }
+
+    override fun onAnimationEnd(animation: Animator) {
+        animationEnd?.invoke(animation)
+    }
+}</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin">fun ViewPropertyAnimator.setListener(init: AnimListenerHelper.() -&gt; Unit) {
+    val listener = AnimListenerHelper()
+    listener.init()
+    this.setListener(listener)
+}
+
+private typealias AnimListener = (Animator) -&gt; Unit
+
+class AnimListenerHelper : Animator.AnimatorListener {
+
+    private var animationStart: AnimListener? = null
+
+    fun onAnimationStart(onAnimationStart: AnimListener) {
+        animationStart = onAnimationStart
+    }
+
+    override fun onAnimationStart(animation: Animator) {
+        animationStart?.invoke(animation)
+    }
+
+    private var animationRepeat: AnimListener? = null
+
+    fun onAnimationRepeat(onAnimationRepeat: AnimListener) {
+        animationRepeat = onAnimationRepeat
+    }
+
+    override fun onAnimationRepeat(animation: Animator) {
+        animationRepeat?.invoke(animation)
+    }
+
+    private var animationCancel: AnimListener? = null
+
+    fun onAnimationCancel(onAnimationCancel: AnimListener) {
+        animationCancel = onAnimationCancel
+    }
+
+    override fun onAnimationCancel(animation: Animator) {
+        animationCancel?.invoke(animation)
+    }
+
+    private var animationEnd: AnimListener? = null
+
+    fun onAnimationEnd(onAnimationEnd: AnimListener) {
+        animationEnd = onAnimationEnd
+    }
+
+    override fun onAnimationEnd(animation: Animator) {
+        animationEnd?.invoke(animation)
+    }
+}</pre>
+<p>The resulting code looks great, but at the cost of doing much more work.</p>
+<h2>What solution should I use?</h2>
+<p>As usual, it depends. <strong>If you’re not using it very often in your code, I would say that none of them</strong>. Be pragmatic in these situations, if you’re going to write a listener once, just use an anonymous object that implements the interface and keep writing code that matters.</p>
+<p>If you see that you need it more times, do a refactor with one of these solutions. I would usually go for the simple extension that just uses the function we are interested in that moment. If you need more than one, then evaluate which one of the two latest alternatives works better for you. As usual, it depends on how extensively you’re going to use it.</p>
+<p>Hope this lines help you next time you find yourself in a situation like this. <strong>If you solve this differently, please let me know in the comments!</strong></p>
+<p>Thanks for reading <img draggable="false" role="img" class="emoji" alt="🙂" src="./Listeners with several functions in Kotlin. How to make them shine__files/1f642.svg"></p>
+<span id="tve_leads_end_content" style="display: block; visibility: hidden; border: 1px solid transparent;"></span><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul data-sharing-events-added="true"><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-26289" class="share-twitter sd-button share-icon no-text" href="https://antonioleiva.com/listeners-several-functions-kotlin/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="https://antonioleiva.com/listeners-several-functions-kotlin/?share=pocket&amp;nb=1" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li><li><a href="https://antonioleiva.com/listeners-several-functions-kotlin/#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></li></ul><div class="sharing-hidden"><div class="inner" style="display: none;" data-sharing-more-button-id="0"><ul data-sharing-events-added="true"><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-26289" class="share-facebook sd-button share-icon no-text" href="https://antonioleiva.com/listeners-several-functions-kotlin/?share=facebook&amp;nb=1" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-26289" class="share-linkedin sd-button share-icon no-text" href="https://antonioleiva.com/listeners-several-functions-kotlin/?share=linkedin&amp;nb=1" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li><li class="share-end"></li><li class="share-email share-service-visible"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon no-text" href="https://antonioleiva.com/listeners-several-functions-kotlin/?share=email&amp;nb=1" target="_blank" title="Click to email this to a friend"><span></span><span class="sharing-screen-reader-text">Click to email this to a friend (Opens in new window)</span></a></li><li class="share-print"><a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon no-text" href="https://antonioleiva.com/listeners-several-functions-kotlin/#print" target="_blank" title="Click to print" data-et-has-event-already="true"><span></span><span class="sharing-screen-reader-text">Click to print (Opens in new window)</span></a></li><li class="share-end"></li><li class="share-end"></li></ul></div></div></div></div></div><p></p><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-44535471-26289-6029541ed9303" data-src="https://widgets.wp.com/likes/#blog_id=44535471&amp;post_id=26289&amp;origin=antonioleiva.com&amp;obj_id=44535471-26289-6029541ed9303" data-name="like-post-frame-44535471-26289-6029541ed9303"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe name="like-post-frame-44535471-26289-6029541ed9303" src="./Listeners with several functions in Kotlin. How to make them shine__files/saved_resource.html" height="55px" width="100%" frameborder="0" scrolling="no"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-visual jp-relatedposts-grid "><div class="jp-relatedposts-post jp-relatedposts-post0 jp-relatedposts-post-thumbs" data-post-id="766" data-post-format="false"><a class="jp-relatedposts-post-a" href="https://antonioleiva.com/functional-programming-android-kotlin-lambdas/" title="Unleash functional power on Android (I): Kotlin lambdas" data-origin="26289" data-position="0"><img class="jp-relatedposts-post-img" src="./Listeners with several functions in Kotlin. How to make them shine__files/lambda.png" width="350" alt=""></a><h4 class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://antonioleiva.com/functional-programming-android-kotlin-lambdas/" title="Unleash functional power on Android (I): Kotlin lambdas" data-origin="26289" data-position="0">Unleash functional power on Android (I): Kotlin lambdas</a></h4><p class="jp-relatedposts-post-excerpt">The functional programming can be a really powerful tool when used properly, and though Java 8 includes some functional tools, as you can imagine Android Developers won't be able to use it very soon (or even never). So many alternative languages are starting to emerge to solve this problem. Functional…</p><time class="jp-relatedposts-post-date" datetime="September 1, 2015" style="display: block;">September 1, 2015</time><p class="jp-relatedposts-post-context">In "Blog"</p></div><div class="jp-relatedposts-post jp-relatedposts-post1 jp-relatedposts-post-thumbs" data-post-id="987" data-post-format="false"><a class="jp-relatedposts-post-a" href="https://antonioleiva.com/recyclerview-listener/" title="Set a click listener to a RecyclerView" data-origin="26289" data-position="1"><img class="jp-relatedposts-post-img" src="./Listeners with several functions in Kotlin. How to make them shine__files/recyclerview-listener.jpg" width="350" alt=""></a><h4 class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://antonioleiva.com/recyclerview-listener/" title="Set a click listener to a RecyclerView" data-origin="26289" data-position="1">Set a click listener to a RecyclerView</a></h4><p class="jp-relatedposts-post-excerpt">If you've used a RecyclerView, you may know that they don't have a setOnItemClickListener as ListView had, so we have to create our own way to do it. Many people asked me how to do this, so that's why I decided to write about it. There are many ways to…</p><time class="jp-relatedposts-post-date" datetime="December 14, 2015" style="display: block;">December 14, 2015</time><p class="jp-relatedposts-post-context">In "Blog"</p></div><div class="jp-relatedposts-post jp-relatedposts-post2 jp-relatedposts-post-thumbs" data-post-id="1098" data-post-format="false"><a class="jp-relatedposts-post-a" href="https://antonioleiva.com/kotlin-awesome-tricks-for-android/" title="Kotlin awesome tricks for Android" data-origin="26289" data-position="2"><img class="jp-relatedposts-post-img" src="./Listeners with several functions in Kotlin. How to make them shine__files/kotlin_featured.jpg" width="350" alt=""></a><h4 class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://antonioleiva.com/kotlin-awesome-tricks-for-android/" title="Kotlin awesome tricks for Android" data-origin="26289" data-position="2">Kotlin awesome tricks for Android</a></h4><p class="jp-relatedposts-post-excerpt">I've been talking a lot about Kotlin in this blog, but now that Google is also talking about Kotlin, and that Kotlin 1.0 RC has been released, there's no doubt that Kotlin is much more than just an alternative for Android. Kotlin is here to stay, and I recommend you…</p><time class="jp-relatedposts-post-date" datetime="February 4, 2016" style="display: block;">February 4, 2016</time><p class="jp-relatedposts-post-context">In "Blog"</p></div></div></div>					</div> <!-- .entry-content -->
+					<div class="et_post_meta_wrapper">
+					<!-- You can start editing here. -->
+
+<section id="comment-wrap">
+	<h2 id="comments" class="page_title">11 Comments</h2>
+			
+					<ol class="commentlist clearfix">
+					<li class="comment even thread-even depth-1" id="li-comment-8144">
+		<article id="comment-8144" class="comment-body clearfix">
+			<div class="comment_avatar">
+					<img alt="Nikhil" src="./Listeners with several functions in Kotlin. How to make them shine__files/783c52ded829219936c3372c3b7e2098.png" srcset="https://secure.gravatar.com/avatar/783c52ded829219936c3372c3b7e2098?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">			</div>
+
+			<div class="comment_postinfo">
+					<span class="fn">Nikhil</span>				<span class="comment_date">
+					on December 18, 2017 at 08:37				</span>
+												</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>In the first example, can’t we just return ViewPropertyAnimator (thus just returning “it”)? That way, the builder can just continue on</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://antonioleiva.com/listeners-several-functions-kotlin/#comment-8144" data-commentid="8144" data-postid="26289" data-belowelement="comment-8144" data-respondelement="respond" data-replyto="Reply to Nikhil" aria-label="Reply to Nikhil" data-et-has-event-already="true">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+		<ul class="children">
+	<li class="comment byuser comment-author-antoniolg bypostauthor odd alt depth-2" id="li-comment-8148">
+		<article id="comment-8148" class="comment-body clearfix">
+			<div class="comment_avatar">
+					<img alt="Antonio Leiva" src="./Listeners with several functions in Kotlin. How to make them shine__files/6f41050776d43380d0d8dd8b02f0e360.png" srcset="https://secure.gravatar.com/avatar/6f41050776d43380d0d8dd8b02f0e360?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">			</div>
+
+			<div class="comment_postinfo">
+					<span class="fn"><a href="http://antonioleiva.com/" rel="external nofollow ugc" class="url">Antonio Leiva</a></span>				<span class="comment_date">
+					on December 23, 2017 at 16:58				</span>
+												</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Of course! I didn’t do it because the original API doesn’t either, but it’s a great opportunity to improve the original API even more.</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://antonioleiva.com/listeners-several-functions-kotlin/#comment-8148" data-commentid="8148" data-postid="26289" data-belowelement="comment-8148" data-respondelement="respond" data-replyto="Reply to Antonio Leiva" aria-label="Reply to Antonio Leiva" data-et-has-event-already="true">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-8159">
+		<article id="comment-8159" class="comment-body clearfix">
+			<div class="comment_avatar">
+					<img alt="Novo Dimaporo" src="./Listeners with several functions in Kotlin. How to make them shine__files/6faabbab0636e80104cd2b255f80473a.png" srcset="https://secure.gravatar.com/avatar/6faabbab0636e80104cd2b255f80473a?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">			</div>
+
+			<div class="comment_postinfo">
+					<span class="fn">Novo Dimaporo</span>				<span class="comment_date">
+					on December 26, 2017 at 12:16				</span>
+												</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Hi… What does this mean? init: AnimListenerHelper.() -&gt; Unit</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://antonioleiva.com/listeners-several-functions-kotlin/#comment-8159" data-commentid="8159" data-postid="26289" data-belowelement="comment-8159" data-respondelement="respond" data-replyto="Reply to Novo Dimaporo" aria-label="Reply to Novo Dimaporo" data-et-has-event-already="true">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+		<ul class="children">
+	<li class="comment byuser comment-author-antoniolg bypostauthor odd alt depth-2" id="li-comment-8185">
+		<article id="comment-8185" class="comment-body clearfix">
+			<div class="comment_avatar">
+					<img alt="Antonio Leiva" src="./Listeners with several functions in Kotlin. How to make them shine__files/6f41050776d43380d0d8dd8b02f0e360.png" srcset="https://secure.gravatar.com/avatar/6f41050776d43380d0d8dd8b02f0e360?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">			</div>
+
+			<div class="comment_postinfo">
+					<span class="fn"><a href="http://antonioleiva.com/" rel="external nofollow ugc" class="url">Antonio Leiva</a></span>				<span class="comment_date">
+					on January 8, 2018 at 09:18				</span>
+												</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>That’s a lambda with receiver. Here you have a nice explanation about it: <a href="https://kotlinlang.org/docs/reference/lambdas.html#function-literals-with-receiver" rel="nofollow ugc" data-et-has-event-already="true">https://kotlinlang.org/docs/reference/lambdas.html#function-literals-with-receiver</a></p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://antonioleiva.com/listeners-several-functions-kotlin/#comment-8185" data-commentid="8185" data-postid="26289" data-belowelement="comment-8185" data-respondelement="respond" data-replyto="Reply to Antonio Leiva" aria-label="Reply to Antonio Leiva" data-et-has-event-already="true">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-8216">
+		<article id="comment-8216" class="comment-body clearfix">
+			<div class="comment_avatar">
+					<img alt="Idan Ratzabi" src="./Listeners with several functions in Kotlin. How to make them shine__files/1f168e6584a5d2380fe8e7b261ade255.png" srcset="https://secure.gravatar.com/avatar/1f168e6584a5d2380fe8e7b261ade255?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">			</div>
+
+			<div class="comment_postinfo">
+					<span class="fn">Idan Ratzabi</span>				<span class="comment_date">
+					on January 24, 2018 at 18:49				</span>
+												</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Hey Antonio,<br>
+You can also do the below and then you have option to either call one of the listeners if you only need one (without calling setListener) and the option you presented.<br>
+See here :<br>
+<a href="https://gist.github.com/anonymous/15766bbdee613a20c69ab0a0bda414e3" rel="nofollow ugc">https://gist.github.com/anonymous/15766bbdee613a20c69ab0a0bda414e3</a></p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://antonioleiva.com/listeners-several-functions-kotlin/#comment-8216" data-commentid="8216" data-postid="26289" data-belowelement="comment-8216" data-respondelement="respond" data-replyto="Reply to Idan Ratzabi" aria-label="Reply to Idan Ratzabi" data-et-has-event-already="true">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+		</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-8277">
+		<article id="comment-8277" class="comment-body clearfix">
+			<div class="comment_avatar">
+					<img alt="sagarsrao" src="./Listeners with several functions in Kotlin. How to make them shine__files/3112c79cdc782c60b955d1cfef66ad40.png" srcset="https://secure.gravatar.com/avatar/3112c79cdc782c60b955d1cfef66ad40?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">			</div>
+
+			<div class="comment_postinfo">
+					<span class="fn"><a href="http://gravatar.com/sagarsrao" rel="external nofollow ugc" class="url">sagarsrao</a></span>				<span class="comment_date">
+					on March 5, 2018 at 07:33				</span>
+												</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Nice one….<br>
+I needed a solution for custom listeners……Kindly tell me how can I implement using lamda and Higher order functions?</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://antonioleiva.com/listeners-several-functions-kotlin/#comment-8277" data-commentid="8277" data-postid="26289" data-belowelement="comment-8277" data-respondelement="respond" data-replyto="Reply to sagarsrao" aria-label="Reply to sagarsrao" data-et-has-event-already="true">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+		<ul class="children">
+	<li class="comment byuser comment-author-antoniolg bypostauthor even depth-2" id="li-comment-8280">
+		<article id="comment-8280" class="comment-body clearfix">
+			<div class="comment_avatar">
+					<img alt="Antonio Leiva" src="./Listeners with several functions in Kotlin. How to make them shine__files/6f41050776d43380d0d8dd8b02f0e360.png" srcset="https://secure.gravatar.com/avatar/6f41050776d43380d0d8dd8b02f0e360?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">			</div>
+
+			<div class="comment_postinfo">
+					<span class="fn"><a href="http://antonioleiva.com/" rel="external nofollow ugc" class="url">Antonio Leiva</a></span>				<span class="comment_date">
+					on March 6, 2018 at 10:08				</span>
+												</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>What exactly do you need? If your listener is custom, you can just use a lambda instead of writing the listener interface.</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://antonioleiva.com/listeners-several-functions-kotlin/#comment-8280" data-commentid="8280" data-postid="26289" data-belowelement="comment-8280" data-respondelement="respond" data-replyto="Reply to Antonio Leiva" aria-label="Reply to Antonio Leiva" data-et-has-event-already="true">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1" id="li-comment-8281">
+		<article id="comment-8281" class="comment-body clearfix">
+			<div class="comment_avatar">
+					<img alt="narendra techguy" src="./Listeners with several functions in Kotlin. How to make them shine__files/b892ceb105b64588b68f343f58ee95f4.png" srcset="https://secure.gravatar.com/avatar/b892ceb105b64588b68f343f58ee95f4?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">			</div>
+
+			<div class="comment_postinfo">
+					<span class="fn"><a href="https://plus.google.com/101957044500099592302" rel="external nofollow ugc" class="url">narendra techguy</a></span>				<span class="comment_date">
+					on March 6, 2018 at 17:57				</span>
+												</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Kotlin + Antonio Leiva = Awesome tuts</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://antonioleiva.com/listeners-several-functions-kotlin/#comment-8281" data-commentid="8281" data-postid="26289" data-belowelement="comment-8281" data-respondelement="respond" data-replyto="Reply to narendra techguy" aria-label="Reply to narendra techguy" data-et-has-event-already="true">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+		<ul class="children">
+	<li class="comment byuser comment-author-antoniolg bypostauthor even depth-2" id="li-comment-8285">
+		<article id="comment-8285" class="comment-body clearfix">
+			<div class="comment_avatar">
+					<img alt="Antonio Leiva" src="./Listeners with several functions in Kotlin. How to make them shine__files/6f41050776d43380d0d8dd8b02f0e360.png" srcset="https://secure.gravatar.com/avatar/6f41050776d43380d0d8dd8b02f0e360?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">			</div>
+
+			<div class="comment_postinfo">
+					<span class="fn"><a href="http://antonioleiva.com/" rel="external nofollow ugc" class="url">Antonio Leiva</a></span>				<span class="comment_date">
+					on March 9, 2018 at 00:44				</span>
+												</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>Thanks! <img draggable="false" role="img" class="emoji" alt="🙂" src="./Listeners with several functions in Kotlin. How to make them shine__files/1f642.svg"></p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://antonioleiva.com/listeners-several-functions-kotlin/#comment-8285" data-commentid="8285" data-postid="26289" data-belowelement="comment-8285" data-respondelement="respond" data-replyto="Reply to Antonio Leiva" aria-label="Reply to Antonio Leiva" data-et-has-event-already="true">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-9764">
+		<article id="comment-9764" class="comment-body clearfix">
+			<div class="comment_avatar">
+					<img alt="Ricardo" src="./Listeners with several functions in Kotlin. How to make them shine__files/c6c399ec6fc0965c22248f652d6bf343.png" srcset="https://secure.gravatar.com/avatar/c6c399ec6fc0965c22248f652d6bf343?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">			</div>
+
+			<div class="comment_postinfo">
+					<span class="fn">Ricardo</span>				<span class="comment_date">
+					on January 13, 2019 at 11:30				</span>
+												</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>View in some implementention the use of  return@OnClickListener  to finish the code on error.  Why not a simple return?</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://antonioleiva.com/listeners-several-functions-kotlin/#comment-9764" data-commentid="9764" data-postid="26289" data-belowelement="comment-9764" data-respondelement="respond" data-replyto="Reply to Ricardo" aria-label="Reply to Ricardo" data-et-has-event-already="true">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+		<ul class="children">
+	<li class="comment byuser comment-author-antoniolg bypostauthor even depth-2" id="li-comment-9770">
+		<article id="comment-9770" class="comment-body clearfix">
+			<div class="comment_avatar">
+					<img alt="Antonio Leiva" src="./Listeners with several functions in Kotlin. How to make them shine__files/6f41050776d43380d0d8dd8b02f0e360.png" srcset="https://secure.gravatar.com/avatar/6f41050776d43380d0d8dd8b02f0e360?s=160&amp;d=mm&amp;r=g 2x" class="avatar avatar-80 photo" height="80" width="80" loading="lazy">			</div>
+
+			<div class="comment_postinfo">
+					<span class="fn"><a href="https://antonioleiva.com/" rel="external nofollow ugc" class="url">Antonio Leiva</a></span>				<span class="comment_date">
+					on January 14, 2019 at 18:46				</span>
+												</div> <!-- .comment_postinfo -->
+
+			<div class="comment_area">
+				
+				<div class="comment-content clearfix">
+				<p>No idea, I would have to see that code. You don’t mean in these examples, right?</p>
+<span class="reply-container"><a rel="nofollow" class="comment-reply-link et_pb_button" href="https://antonioleiva.com/listeners-several-functions-kotlin/#comment-9770" data-commentid="9770" data-postid="26289" data-belowelement="comment-9770" data-respondelement="respond" data-replyto="Reply to Antonio Leiva" aria-label="Reply to Antonio Leiva" data-et-has-event-already="true">Reply</a></span>				</div> <!-- end comment-content-->
+			</div> <!-- end comment_area-->
+		</article> <!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+			</ol>
+		
+		
+							<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"><span>Submit a Comment</span> <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://antonioleiva.com/listeners-several-functions-kotlin/#respond" style="display:none;" data-et-has-event-already="true">Cancel reply</a></small></h3><form action="https://antonioleiva.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><div class="rgpd-antes"><p>The personal data that you provide through this form will be recorded in a file of Antonio Leiva Gordillo, in order to manage the comments. The legitimation is made through the consent of the interested party. If it is not accepted, you cannot add any comments. The data you provide is only used to&nbsp;prevent spam and won't be used for anything else. You can exercise the rights of access, rectification, cancellation, and opposition at&nbsp;contact@antonioleiva.com.</p></div><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment" style="display: none;">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author" style="display: none;">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email" style="display: none;">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url" style="display: none;">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p><p class="rgpd_p"><input type="checkbox" name="rgpd" id="rgpd" value="acepto" class="casilla_rgpd casilla-lopd" aria-required="true" required=""><span class="rgpd_comentarios lopd_comentarios"> I accept the <a href="https://antonioleiva.com/privacy-policy/" target="_blank">privacy policy</a>.</span> <span class="rgpd_asterisco lopd_asterisco">*</span></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit et_pb_button" value="Submit Comment" onclick="verificaLopd(`Please, accept the privacy policy to continue`,`#81d742`,`Aceptar`);return false;"> <input type="hidden" name="comment_post_ID" value="26289" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d34f63957b"></p><textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100" style="display: none !important;"></textarea><input type="hidden" id="ak_js" name="ak_js" value="1613374547264"></form>	</div><!-- #respond -->
+		</section>					</div> <!-- .et_post_meta_wrapper -->
+				</article> <!-- .et_pb_post -->
+
+						</div> <!-- #left-area -->
+
+					</div> <!-- #content-area -->
+	</div> <!-- .container -->
+	</div> <!-- #main-content -->
+
+
+	<span class="et_pb_scroll_top et-pb-icon et-visible" style="display: inline;"></span>
+
+
+			<footer id="main-footer">
+				
+
+		
+				<div id="et-footer-nav">
+					<div class="container">
+						<ul id="menu-bottom" class="bottom-nav"><li id="menu-item-901" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-901"><a href="https://antonioleiva.com/">Home</a></li>
+<li id="menu-item-25592" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25592"><a href="https://antonioleiva.com/contact/">Contact</a></li>
+<li id="menu-item-26169" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26169"><a href="https://antonioleiva.com/legal-notice/">Legal notice and terms of use</a></li>
+<li id="menu-item-899" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-899"><a href="https://antonioleiva.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-26170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26170"><a href="https://antonioleiva.com/cookies-policy/">Cookies policy</a></li>
+<li id="menu-item-26206" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26206"><a href="https://antonioleiva.com/terms-and-conditions/">Terms and Conditions</a></li>
+</ul>					</div>
+				</div> <!-- #et-footer-nav -->
+
+			
+				<div id="footer-bottom">
+					<div class="container clearfix">
+				<ul class="et-social-icons">
+
+
+</ul><div id="footer-info">Designed by <a href="http://devexperto.com/elegant-themes"> Elegant Themes</a> | Hosted by <a href="http://devexperto.com/webempresa">Webempresa</a></div>					</div>	<!-- .container -->
+				</div>
+			</footer> <!-- #main-footer -->
+		</div> <!-- #et-main-area -->
+
+
+	</div> <!-- #page-container -->
+
+	<script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/app/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:'89a78134d59ff2751f99a3b75bb565d9'})})</script>	<style>
+		.cmplz-blocked-content-container.recaptcha-invisible,
+		.cmplz-blocked-content-container.g-recaptcha {
+			max-width: initial !important;
+			height: 80px !important;
+			margin-bottom: 20px;
+		}
+
+		@media only screen and (max-width: 400px) {
+			.cmplz-blocked-content-container.recaptcha-invisible,
+			.cmplz-blocked-content-container.g-recaptcha {
+				height: 100px !important
+			}
+		}
+
+		.cmplz-blocked-content-container.recaptcha-invisible .cmplz-blocked-content-notice,
+		.cmplz-blocked-content-container.g-recaptcha .cmplz-blocked-content-notice {
+			max-width: initial;
+			padding: 7px;
+		}
+	</style>
+		<style>
+		.cmplz-placeholder-element > blockquote.fb-xfbml-parse-ignore {
+			margin: 0 20px;
+		}
+	</style>
+	<script type="text/javascript">/**
+ * Displays toast message from storage, it is used when the user is redirected after login
+ */
+window.onload = function () {
+	let message = sessionStorage.getItem( "tcb_toast_message" );
+
+	if ( message ) {
+		tcbToast( sessionStorage.getItem( "tcb_toast_message" ), false );
+		sessionStorage.removeItem( "tcb_toast_message" );
+	}
+};
+
+/**
+ * Displays toast message
+ */
+function tcbToast( message, error, callback ) {
+	/* Also allow "message" objects */
+	if ( typeof message !== 'string' ) {
+		message = message.message || message.error || message.success;
+	}
+	if ( ! error ) {
+		error = false;
+	}
+
+	let _icon = 'checkmark',
+		_extra_class = '';
+	if ( error ) {
+		_icon = 'cross';
+		_extra_class = ' tve-toast-error';
+	}
+
+	jQuery( 'body' ).slideDown( 'fast', function () {
+		jQuery( 'body' ).prepend( '<div class="tvd-toast tve-fe-message"><div class="tve-toast-message"><div class="tve-toast-icon-container' + _extra_class + '"><span class="tve_tick thrv-svg-icon"><svg xmlns="http://www.w3.org/2000/svg" class="tcb-checkmark" style="width: 100%; height: 1em; stroke-width: 0; fill: #ffffff; stroke: #ffffff;" viewBox="0 0 32 32"><path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"></path></svg></span></div><div class="tve-toast-message-container">' + message + '</div></div></div>' );
+	} );
+
+	setTimeout( function () {
+		jQuery( '.tvd-toast' ).hide();
+
+		if ( typeof callback === 'function' ) {
+			callback();
+		}
+
+	}, 3000 );
+}</script>
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/antonioleiva.com\/listeners-several-functions-kotlin\/":26289};
+	</script>
+					
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/antonioleiva.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/scripts.js.download" id="contact-form-7-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/imagesloaded.min.js.download" id="imagesloaded-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/masonry.min.js.download" id="masonry-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/jquery.masonry.min.js.download" id="jquery-masonry-js"></script>
+<script type="text/javascript" id="tve_frontend-js-extra">
+/* <![CDATA[ */
+var tve_frontend_options = {"is_editor_page":"","page_events":[],"is_single":"1","ajaxurl":"https:\/\/antonioleiva.com\/wp-admin\/admin-ajax.php","social_fb_app_id":"","dash_url":"https:\/\/antonioleiva.com\/wp-content\/plugins\/thrive-ultimatum\/thrive-dashboard","translations":{"Copy":"Copy"},"post_id":"26289","ip":"157.55.39.230","current_user":[],"post_title":"Listeners with several functions in Kotlin. How to make them shine?","post_type":"post","post_url":"https:\/\/antonioleiva.com\/listeners-several-functions-kotlin\/","is_lp":"","post_request_data":[]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/frontend.min.js.download" id="tve_frontend-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/frontend.min.js(1).download" id="tve_leads_frontend-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/comment-reply.min.js.download" id="comment-reply-js"></script>
+<script type="text/javascript" id="divi-custom-script-js-extra">
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_shortcodes_strings = {"previous":"Previous","next":"Next"};
+var et_pb_custom = {"ajaxurl":"https:\/\/antonioleiva.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/antonioleiva.com\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/antonioleiva.com\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"e5ebafc1ff","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"d4dba2b34e","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"26289","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":""}; var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"}; var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_box_shadow_elements = [];
+var et_pb_motion_elements = {"desktop":[],"tablet":[],"phone":[]};
+var et_pb_sticky_elements = [];
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/custom.unified.js.download" id="divi-custom-script-js"></script>
+<script type="text/javascript" id="tve-dash-frontend-js-extra">
+/* <![CDATA[ */
+var tve_dash_front = {"ajaxurl":"https:\/\/antonioleiva.com\/wp-admin\/admin-ajax.php","force_ajax_send":"1","is_crawler":"","recaptcha":[]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/frontend.min.js(2).download" id="tve-dash-frontend-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/common.js.download" id="et-core-common-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/enlighterjs.min.js.download" id="enlighterjs-js"></script>
+<script type="text/javascript" id="enlighterjs-js-after">
+!function(e,n){if("undefined"!=typeof EnlighterJS){var o={"selectors":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"options":{"indent":2,"ampersandCleanup":true,"linehover":true,"rawcodeDbclick":false,"textOverflow":"break","linenumbers":true,"theme":"classic","language":"generic","retainCssClasses":false,"collapse":false,"toolbarOuter":"","toolbarTop":"{BTN_RAW}{BTN_COPY}{BTN_WINDOW}{BTN_WEBSITE}","toolbarBottom":""}};(e.EnlighterJSINIT=function(){EnlighterJS.init(o.selectors.block,o.selectors.inline,o.options)})()}else{(n&&(n.error||n.log)||function(){})("Error: EnlighterJS resources not loaded yet!")}}(window,console);
+</script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/cookieconsent.min.js.download" id="cmplz-cookie-js"></script>
+<script type="text/javascript" id="cmplz-cookie-config-js-extra">
+/* <![CDATA[ */
+var complianz = {"static":"","set_cookies":[],"block_ajax_content":"","banner_version":"9","version":"4.9.5","a_b_testing":"","do_not_track":"","consenttype":"optin","region":"eu","geoip":"","categories":"<div class=\"cmplz-categories-wrap\"><label for=\"cmplz_functional\"><input type=\"checkbox\" id=\"cmplz_functional\" class=\"cmplz-consent-checkbox cmplz-svg-checkbox cmplz-square-checkbox cmplz_functional\" checked disabled data-category=\"cmplz_functional\"><div class=\"cc-check\"><svg width=\"16px\" height=\"16px\" viewBox=\"0 0 18 18\" class=\"cmplz-square\" aria-hidden=\"true\"><path d=\"M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z\"><\/path><polyline points=\"1 9 7 14 15 4\"><\/polyline><\/svg><\/div><span class=\"cc-category\" style=\"\">Functional<\/span><\/label><\/div><div class=\"cmplz-categories-wrap\"><label for=\"cmplz_0\"><input type=\"checkbox\" id=\"cmplz_0\" class=\"cmplz-consent-checkbox cmplz-svg-checkbox cmplz-square-checkbox cmplz_0\"   data-category=\"cmplz_0\"><div class=\"cc-check\"><svg width=\"16px\" height=\"16px\" viewBox=\"0 0 18 18\" class=\"cmplz-square\" aria-hidden=\"true\"><path d=\"M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z\"><\/path><polyline points=\"1 9 7 14 15 4\"><\/polyline><\/svg><\/div><span class=\"cc-category\" style=\"\">Statistics<\/span><\/label><\/div><div class=\"cmplz-categories-wrap\"><label for=\"cmplz_marketing\"><input type=\"checkbox\" id=\"cmplz_marketing\" class=\"cmplz-consent-checkbox cmplz-svg-checkbox cmplz-square-checkbox cmplz_marketing\"   data-category=\"cmplz_marketing\"><div class=\"cc-check\"><svg width=\"16px\" height=\"16px\" viewBox=\"0 0 18 18\" class=\"cmplz-square\" aria-hidden=\"true\"><path d=\"M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z\"><\/path><polyline points=\"1 9 7 14 15 4\"><\/polyline><\/svg><\/div><span class=\"cc-category\" style=\"\">Marketing<\/span><\/label><\/div><style>#cc-window.cc-window .cmplz-categories-wrap .cc-check svg {stroke: #191e23}<\/style>","position":"center","title":"","theme":"classic","checkbox_style":"square","use_categories":"hidden","use_categories_optinstats":"hidden","accept":"Accept cookies","revoke":"Manage consent","dismiss":"Functional only","dismiss_timeout":"10","popup_background_color":"#f1f1f1","popup_text_color":"#191e23","button_background_color":"#f1f1f1","button_text_color":"#0073aa","accept_all_background_color":"#0085ba","accept_all_text_color":"#fff","accept_all_border_color":"#0073aa","functional_background_color":"#f1f1f1","functional_text_color":"#0073aa","functional_border_color":"#f1f1f1","border_color":"#0073aa","use_custom_cookie_css":"","custom_css":".cc-window","custom_css_amp":"#cmplz-consent-ui, #cmplz-post-consent-ui {} \n#cmplz-consent-ui .cmplz-consent-message {} \n#cmplz-consent-ui button, #cmplz-post-consent-ui button {}","readmore_optin":"Cookie Policy","readmore_impressum":"Impressum","accept_informational":"Accept","message_optout":"We use cookies to optimize our website and our service.","message_optin":"We use our own and third-party cookies to analyze our services and show you advertising related to your preferences based on a profile drawn up from your browsing habits (for example, pages visited).","readmore_optout":"Cookie Policy","readmore_optout_dnsmpi":"Do Not Sell My Personal Information","hide_revoke":"","banner_width":"476","soft_cookiewall":"1","type":"opt-in","layout":"basic","dismiss_on_scroll":"","dismiss_on_timeout":"","cookie_expiry":"365","nonce":"24eef54391","url":"https:\/\/antonioleiva.com\/wp-json\/complianz\/v1\/?lang=en","set_cookies_on_root":"","cookie_domain":"","current_policy_id":"15","cookie_path":"\/","tcf_active":"","tm_categories":"1","cat_num":"1","view_preferences":"View preferences","save_preferences":"Save preferences","accept_all":"Accept all","readmore_url":{"eu":"https:\/\/antonioleiva.com\/cookies-policy\/"},"privacy_link":{"eu":""},"placeholdertext":"Click to accept marketing cookies and enable this content"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/complianz.min.js.download" id="cmplz-cookie-config-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/wp-embed.min.js.download" id="wp-embed-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/postmessage.min.js.download" id="postmessage-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/jquery.jetpack-resize.min.js.download" id="jetpack_resize-js"></script>
+<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/queuehandler.min.js.download" id="jetpack_likes_queuehandler-js"></script>
+<script async="async" type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/form.js.download" id="akismet-form-js"></script>
+<script type="text/javascript" id="sharing-js-js-extra">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script async="true" src="./Listeners with several functions in Kotlin. How to make them shine__files/saved_resource"></script><script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/sharing.min.js.download" id="sharing-js-js"></script>
+<script type="text/javascript" id="sharing-js-js-after">
+var windowOpen;
+			document.body.addEventListener( 'click', function ( event ) {
+				if ( event.target && (
+					event.target.matches && event.target.matches( 'a.share-twitter' ) ||
+					event.target.msMatchesSelector && event.target.msMatchesSelector( 'a.share-twitter' )
+				) ) {
+					// If there's another sharing window open, close it.
+					if ( typeof windowOpen !== 'undefined' ) {
+						windowOpen.close();
+					}
+					windowOpen = window.open( event.target.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+					return false;
+				}
+			} );
+var windowOpen;
+			document.body.addEventListener( 'click', function ( event ) {
+				if ( event.target && (
+					event.target.matches && event.target.matches( 'a.share-pocket' ) ||
+					event.target.msMatchesSelector && event.target.msMatchesSelector( 'a.share-pocket' )
+				) ) {
+					// If there's another sharing window open, close it.
+					if ( typeof windowOpen !== 'undefined' ) {
+						windowOpen.close();
+					}
+					windowOpen = window.open( event.target.getAttribute( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+					return false;
+				}
+			} );
+var windowOpen;
+			document.body.addEventListener( 'click', function ( event ) {
+				if ( event.target && (
+					event.target.matches && event.target.matches( 'a.share-facebook' ) ||
+					event.target.msMatchesSelector && event.target.msMatchesSelector( 'a.share-facebook' )
+				) ) {
+					// If there's another sharing window open, close it.
+					if ( typeof windowOpen !== 'undefined' ) {
+						windowOpen.close();
+					}
+					windowOpen = window.open( event.target.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+					return false;
+				}
+			} );
+var windowOpen;
+			document.body.addEventListener( 'click', function ( event ) {
+				if ( event.target && (
+					event.target.matches && event.target.matches( 'a.share-linkedin' ) ||
+					event.target.msMatchesSelector && event.target.msMatchesSelector( 'a.share-linkedin' )
+				) ) {
+					// If there's another sharing window open, close it.
+					if ( typeof windowOpen !== 'undefined' ) {
+						windowOpen.close();
+					}
+					windowOpen = window.open( event.target.getAttribute( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+					return false;
+				}
+			} );
+</script>
+<script type="text/javascript">var tcb_post_lists=JSON.parse('[]');</script><script type="text/javascript">/*<![CDATA[*/if ( !window.TL_Const ) {var TL_Const={"security":"f6e9b098f6","ajax_url":"https:\/\/antonioleiva.com\/wp-admin\/admin-ajax.php","forms":{"in_content":{"_key":"10","form_name":"In content - Book","trigger":"page_load","trigger_config":{},"form_type_id":1013,"main_group_id":1007,"main_group_name":"Regular Campaign","active_test_id":"3","active_test_data":{"id":"3","test_type":"1","main_group_id":"1013","date_added":"2019-02-05 15:50:12","date_started":"2019-02-05 15:50:12","date_completed":null,"title":"Best in content","notes":"","auto_win_enabled":"0","auto_win_min_conversions":"100","auto_win_min_duration":"14","auto_win_chance_original":"95.00","status":"running","form_title":"In content"}}},"action_conversion":"tve_leads_ajax_conversion","action_impression":"tve_leads_ajax_impression","ajax_load":0,"main_group_id":1007,"display_options":{"allowed_post_types":[],"flag_url_match":false},"custom_post_data":[],"current_screen":{"screen_type":4,"screen_id":26289},"ignored_fields":["email","_captcha_size","_captcha_theme","_captcha_type","_submit_option","_use_captcha","g-recaptcha-response","__tcb_lg_fc","__tcb_lg_msg","_state","_form_type","_error_message_option","_back_url","_submit_option","url","_asset_group","_asset_option","mailchimp_optin","tcb_token","tve_labels","tve_mapping","_api_custom_fields","_sendParams","_autofill"]};} else {ThriveGlobal.$j.extend(true, TL_Const, {"security":"f6e9b098f6","ajax_url":"https:\/\/antonioleiva.com\/wp-admin\/admin-ajax.php","forms":{"in_content":{"_key":"10","form_name":"In content - Book","trigger":"page_load","trigger_config":{},"form_type_id":1013,"main_group_id":1007,"main_group_name":"Regular Campaign","active_test_id":"3","active_test_data":{"id":"3","test_type":"1","main_group_id":"1013","date_added":"2019-02-05 15:50:12","date_started":"2019-02-05 15:50:12","date_completed":null,"title":"Best in content","notes":"","auto_win_enabled":"0","auto_win_min_conversions":"100","auto_win_min_duration":"14","auto_win_chance_original":"95.00","status":"running","form_title":"In content"}}},"action_conversion":"tve_leads_ajax_conversion","action_impression":"tve_leads_ajax_impression","ajax_load":0,"main_group_id":1007,"display_options":{"allowed_post_types":[],"flag_url_match":false},"custom_post_data":[],"current_screen":{"screen_type":4,"screen_id":26289},"ignored_fields":["email","_captcha_size","_captcha_theme","_captcha_type","_submit_option","_use_captcha","g-recaptcha-response","__tcb_lg_fc","__tcb_lg_msg","_state","_form_type","_error_message_option","_back_url","_submit_option","url","_asset_group","_asset_option","mailchimp_optin","tcb_token","tve_labels","tve_mapping","_api_custom_fields","_sendParams","_autofill"]})} /*]]> */</script><script type="text/javascript">var TL_Front = TL_Front || {}; TL_Front.impressions_data = TL_Front.impressions_data || {};TL_Front.impressions_data.in_content = {"group_id":1007,"form_type_id":1013,"variation_key":"10","active_test_id":"3","output_js":true};</script><script type="text/javascript">
+( function ( $ ) {
+	$( function () {
+		var event_data = {"form_id":"tve-leads-track-in_content-10","form_type":"in_content"};
+		event_data.source = 'page_load';
+		setTimeout( function () {
+			if ( window.TL_Front ) {
+				ThriveGlobal.$j( TL_Front ).trigger( 'showform.thriveleads', event_data );
+			}
+		}, 200 );
+	} );
+})( ThriveGlobal.$j );
+</script>
+<!-- Statistics script Complianz GDPR/CCPA -->
+					<script type="text/javascript" class="cmplz-stats">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P8RPJ7R');</script>	<iframe src="./Listeners with several functions in Kotlin. How to make them shine__files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+	<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+	<script type="text/javascript">
+/* <![CDATA[ */
+var TVE_Ult_Data = {"ajaxurl":"https:\/\/antonioleiva.com\/wp-admin\/admin-ajax.php","ajax_load_action":"tve_ult_ajax_load","conversion_events_action":"tve_ult_conversion_event","shortcode_campaign_ids":[],"matched_display_settings":[27096],"campaign_ids":[27096],"post_id":26289,"is_singular":true,"tu_em":""};
+/* ]]> */
+</script>
+		<script type="text/javascript" src="./Listeners with several functions in Kotlin. How to make them shine__files/frontend.min.js(3).download"></script><script type="text/plain" class="cmplz-script cmplz-stats" src="./Listeners with several functions in Kotlin. How to make them shine__files/e-202106.js.download" defer=""></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:9.4',blog:'44535471',post:'26289',tz:'1',srv:'antonioleiva.com'} ]);
+	_stq.push([ 'clickTrackerInit', '44535471', '26289' ]);
+</script>
+
+
+
+<!-- Cached by WP-Optimize (gzip) - https://getwpo.com - Last modified: Sun, 14 Feb 2021 16:47:26 GMT -->
+<div id="sharing_email" style="display: none;">
+		<form action="https://antonioleiva.com/listeners-several-functions-kotlin/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="">
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="">
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="">
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed">
+			
+			<img style="float: right; display: none" class="loading" src="./Listeners with several functions in Kotlin. How to make them shine__files/loading.gif" alt="loading" width="16" height="16">
+			<input type="submit" value="Send Email" class="sharing_send">
+			<a rel="nofollow" href="https://antonioleiva.com/listeners-several-functions-kotlin/#cancel" class="sharing_cancel" role="button" data-et-has-event-already="true">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div></body></html>
